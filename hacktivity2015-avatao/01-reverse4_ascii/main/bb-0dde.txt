@@ -1,0 +1,11 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                                                |
+0x400dde:                                                       |
+mov edi, sym.memory ; "ela.dyn" @ 0x602120                 [_0d1d_]
+call sym.imp.puts ;[k]                                        t f
+                                                    .---------' '---------.
+                                                    |                     |
+                                                    |                     |
+                                                 <@@@@@@>            [_0d34_]
+                                                  v                   v
+                                                  |                   |

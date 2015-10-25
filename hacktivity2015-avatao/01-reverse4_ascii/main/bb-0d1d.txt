@@ -1,0 +1,16 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                                                           |     |
+0x400d1d:                                                                  |     |
+mov esi, str.Such_VM__MuCH_reV3rse_ ; "Such VM! MuCH reV3rse!" @ 0x400f92 [_0cac_]
+mov edi, sym.memory ; "ela.dyn" @ 0x602120                                     f t
+call sym.imp.strcmp ;[i]                                        .--------------' '--------
+test eax, eax                                                   |
+jne 0x400dde ;[j]                                               |
+                                                           <@@@@@@>
+                                                              t f
+                                                    .---------' '---------.
+                                                    |                     |
+                                                    |                     |
+                                                 [_0dde_]            [_0d34_]
+                                                  v                   v
+                                                  |                   |

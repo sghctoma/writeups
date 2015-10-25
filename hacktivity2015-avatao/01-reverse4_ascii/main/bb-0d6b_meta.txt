@@ -1,0 +1,7 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                             |                   |                   |
+0x400d6b:                                    |                   .                   |
+mov eax, dword [rip + 0x201393] ; [0x602104:4]=0x762e756e  LEA sym.good_if_ne_zero ; "nu.v
+test eax, eax                                |                   | t f               |
+je 0x400dd2 ;[o]                             |           .-------|-' '---------.     |
+                                             |           |       |             |     |

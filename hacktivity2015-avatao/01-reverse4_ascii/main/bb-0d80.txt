@@ -1,0 +1,30 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                  |     |           |       |       |     |     |
+0x400d80:                         |     |           |       |       |     |     |
+mov esi, 0x400fb9            [_0d4d_]   |        [_0d61_]   |  [_0d75_]   |     |
+mov edi, str.flag.txt ; "flag.txt" @ 0x400fbb     `---------'       f t   |     |
+call sym.imp.fopen ;[p]       '---.     |                   .-------' '-. '-.   |
+mov qword [rbp-local_9], rax      |     |                   |           |   |   |
+lea rdx, [rbp-local_8]            |     |                   |           |   |   |
+mov rax, qword [rbp-local_9]      |     |              <@@@@@@>      [_0dd2_]   |
+mov esi, 0x400fc4                 |     |               v             v         |
+mov rdi, rax                      |     '---------------'-------.-----'---------'
+mov eax, 0                        |                             |     |
+call sym.imp.__isoc99_fscanf ;[q] |                             |     |
+lea rax, [rbp-local_8]            |                            [_0de8_]
+mov rsi, rax                      |                             v
+mov edi, str.You_won__The_flag_is:__s_n ; "You won! The flag is: %s." @ 0x400fc7
+mov eax, 0                                                      |
+call sym.imp.printf ;[c]                                        |
+mov rax, qword [rbp-local_9]                                   [_0ded_]
+mov rdi, rax                                                        f t
+call sym.imp.fclose ;[r]                            .---------------' '---------.
+nop                                                 |                           |
+jmp 0x400de8 ;[g]                                   |                           |
+                                               [_0dfc_]                         |
+                                                v                               |
+                                                '---------------.     .---------'
+                                                                |     |
+                                                                |     |
+                                                               [_0e01_]
+

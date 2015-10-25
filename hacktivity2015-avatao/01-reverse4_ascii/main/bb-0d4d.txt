@@ -1,0 +1,22 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                               |                     |               |
+0x400d4d:                                      |                     |               |
+mov edi, str.Use_everything_ ; "Use everything!" @ 0x400fa9     [_0d34_]             |
+call sym.imp.puts ;[k]                       v                   v                   |
+mov eax, 0                                   |                   |                   |
+jmp 0x400ded ;[s]                            |                   |                   |
+                                             |                   .                   |
+                                             |                  [_0d65_]             |
+                                             |                   | t f               |
+                                             |           .-------|-' '---------.     |
+                                             |           |       |             |     |
+                                             |           |       |             |     |
+                                             |        [_0d3d_]   |        [_0d6b_]   |
+                                             |           t f     |             f t   |
+                                       .-------------------'     |       .-----'-'   |
+                                       |     |           |       |       |     |     |
+                                       |     |           |       |       |     |     |
+                                  <@@@@@@>   |        [_0d61_]   |  [_0d75_]   |     |
+                                   v         |         `---------'       f t   |     |
+                                   '---.     |                   .-------' '-. '-.   |
+                                       |     |                   |           |   |   |

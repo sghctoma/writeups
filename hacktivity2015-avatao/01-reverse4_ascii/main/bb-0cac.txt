@@ -1,0 +1,32 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+0x400cac:
+movzx eax, word [rbp-local_10_6]
+movzx eax, ax
+mov esi, eax
+mov edi, str.Size_of_data:__u_n ; "Size of data: %u." @ 0x400f80
+mov eax, 0
+call sym.imp.printf ;[c]                                                  [_0c63_]
+movzx eax, word [rbp-local_10_6]                                               f t
+movzx eax, ax                                                           .------' '-.
+mov rdi, rax                                                            |          |
+call sym.imp.malloc ;[d]                                                |          |
+mov qword [rbp-local_10], rax                                      [_0ca6_]        |
+movzx eax, word [rbp-local_10_6]                                    v              |
+movzx edx, ax                                                       |     .--------'
+mov rax, qword [rbp-local_10]                                       |     |
+mov rsi, rax                                                        |     |
+mov edi, 0                                                         <@@@@@@>
+mov eax, 0                                                              f t
+call sym.imp.read ;[a]                                   .--------------' '--------.
+mov edx, 0x200 ; "R.td." @ 0x200                         |                         |
+mov esi, 0                                               |                         |
+mov edi, 0x602120 ; "ela.dyn" 0x00602120  ; "ela.dyn" @ 0x602120                   |
+call sym.imp.memset ;[e]                               t f                         |
+mov rax, qword [rbp-local_10]                .---------' '---------.               |
+mov rdi, rax                                 |                     |               |
+call fcn.00400a45 ;[f]                       |                     |               |
+cmp eax, 0x2a ; '*'                       [_0dde_]            [_0d34_]             |
+jne 0x400de8 ;[g]                          v                   v                   |
+                                           |                   |                   |
+                                           |                   |                   |

@@ -1,0 +1,22 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+0x400ca6:
+mov word [rbp-local_10_6], 0xbb8 ; [0xbb8:2]=0x45c7
+
+
+
+
+                                                                          [_0c63_]
+                                                                               f t
+                                                                        .------' '-.
+                                                                        |          |
+                                                                        |          |
+                                                                   <@@@@@@>        |
+                                                                    v              |
+                                                                    |     .--------'
+                                                                    |     |
+                                                                    |     |
+                                                                   [_0cac_]
+                                                                        f t
+                                                         .--------------' '--------.
+                                                         |                         |

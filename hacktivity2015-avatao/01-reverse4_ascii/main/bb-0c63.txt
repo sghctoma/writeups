@@ -1,0 +1,32 @@
+[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+0x400c63:
+(fcn) main 416
+; arg int arg_1        @ rbp+0x8
+; arg int arg_375      @ rbp+0xbb8
+; var int local_0_1    @ rbp-0x1
+; var int local_1      @ rbp-0x8
+; var int local_8      @ rbp-0x40                                         <@@@@@@>
+; var int local_9      @ rbp-0x48                                              f t
+; var int local_10     @ rbp-0x50                                       .------' '-.
+; var int local_10_4   @ rbp-0x54                                       |          |
+; var int size         @ rbp-0x56                                       |          |
+; DATA XREF from 0x0040073d (main)                                 [_0ca6_]        |
+push rbp                                                            v              |
+mov rbp, rsp                                                        |     .--------'
+sub rsp, 0x70                                                       |     |
+mov dword [rbp - 0x64], edi                                         |     |
+mov qword [rbp - 0x70], rsi                                        [_0cac_]
+mov rax, qword fs:[0x28] ; [0x28:8]=0x21b0  ; '('                       f t
+mov qword [rbp-local_1], rax                             .--------------' '--------.
+xor eax, eax                                             |                         |
+lea rax, [rbp-size]                                      |                         |
+mov edx, 2                                          [_0d1d_]                       |
+mov rsi, rax                                           t f                         |
+mov edi, 0                                   .---------' '---------.               |
+mov eax, 0                                   |                     |               |
+call sym.imp.read ;[a]                       |                     |               |
+movzx eax, word [rbp-size]                [_0dde_]            [_0d34_]             |
+cmp ax, 0xbb8                              v                   v                   |
+jbe 0x400cac ;[b]                          |                   |                   |
+                                           |                   |                   |
