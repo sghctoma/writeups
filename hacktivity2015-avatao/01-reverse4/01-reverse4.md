@@ -1,6 +1,25 @@
 Solving avatao's "R3v3rs3 4"
 ===========================
 
+.toc
+----
+
+* [.intro](#intro)
+* [.radare2](#radare2)
+* [.first_steps](#first_steps)
+* [.main](#main)
+* [.vmloop](#vmloop)
+	* [.instr_A](#instr_a)
+	* [.instr_S](#instr_s)
+	* [.instr_I](#instr_i)
+	* [.instr_D](#instr_d)
+	* [.instr_P](#instr_p)
+	* [.instr_X](#instr_x)
+	* [.instr_J](#instr_j)
+* [.instructionset](#instructionset)
+* [.bytecode](#bytecode)
+* [.outro](#outro)
+
 .intro
 ------
 
@@ -771,7 +790,7 @@ What remains is the reversing of the seven functions that are called by the
 instructions, and finally the construction of a valid bytecode that gives us the
 flag.
 
-**instr_A**
+###instr_A
 
 The function this instruction calls is at offset 0x40080d, so lets seek there!
 
@@ -860,7 +879,7 @@ instruction does the following:
 - *arg1* == "P": steps *sym.current_memory_ptr* by *arg2* bytes.
 - *arg1* == "C": adds *arg2* to the value at *sym.written_by_instr_C*.
 
-**instr_S**
+###instr_S
 
 This function is not recognized either, so we have to manually define it like we
 did with *instr_A*. After we do, and take a look at the minimap, scroll through
@@ -903,7 +922,7 @@ the former does subtraction. To summarize this:
 - *arg1* == "P": steps *sym.current_memory_ptr* backwards by *arg2* bytes.
 - *arg1* == "C": subtracts *arg2* from the value at *sym.written_by_instr_C*.
 
-**instr_I**
+###instr_I
 
 ![instr_I](img/instr_I/instr_I.png)
 
@@ -912,13 +931,13 @@ the function call looks like `call fcn.0040080d` instead of `call fcn.instr_A`.
 This is because when you save and open a project, function names get lost -
 another thing to examine and patch in r2!
 
-**instr_D**
+###instr_D
 
 ![instr_D](img/instr_D/instr_D.png)
 
 Again, simple: it calls *instr_S(arg1, 1)*.
 
-**instr_P**
+###instr_P
 
 It's local var rename time again!
 
@@ -939,7 +958,7 @@ So far this would seem the ideal instruction to construct most of the "Such VM!
 MuCH reV3rse!" string, but remember, this is also the one that can be used only
 9 times!
 
-**instr_X**
+###instr_X
 
 Another simple one, rename local vars anyways!
 
@@ -951,7 +970,7 @@ Another simple one, rename local vars anyways!
 
 This function XORs the value at *sym.current_memory_ptr* with *arg1*.
 
-**instr_J**
+###instr_J
 
 This one is not as simple as the previous ones, but it's not that complicated
 either. Since I'm obviously obsessed by variable renaming:
