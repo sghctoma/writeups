@@ -1,0 +1,896 @@
+# r2 rdb project file
+# flags
+fs strings
+f str.Wrong_ 7 0x00400e98 
+f str.We_are_in_the_outer_space_ 27 0x00400e9f 
+f str.Size_of_data:__u_n 18 0x00400f80 
+f str.Such_VM__MuCH_reV3rse_ 23 0x00400f92 
+f str.Use_everything_ 16 0x00400fa9 
+f str.flag.txt 9 0x00400fbb 
+f str.You_won__The_flag_is:__s_n 26 0x00400fc7 
+f str.Your_getting_closer_ 21 0x00400fe1 
+fs symbols
+f main 416 0x00400c63 
+f entry0 1 0x00400720 
+fs relocs
+f reloc.__gmon_start___248 8 0x00601ff8 
+f reloc.__isoc99_fscanf_24 8 0x00602018 
+f reloc.puts_32 8 0x00602020 
+f reloc.fclose_40 8 0x00602028 
+f reloc.__stack_chk_fail_48 8 0x00602030 
+f reloc.printf_56 8 0x00602038 
+f reloc.memset_64 8 0x00602040 
+f reloc.read_72 8 0x00602048 
+f reloc.__libc_start_main_80 8 0x00602050 
+f reloc.strcmp_88 8 0x00602058 
+f reloc.__gmon_start___96 8 0x00602060 
+f reloc.malloc_104 8 0x00602068 
+f reloc.fopen_112 8 0x00602070 
+fs imports
+f sym.imp.__isoc99_fscanf 6 0x00400660 
+f sym.imp.puts 6 0x00400670 
+f sym.imp.fclose 6 0x00400680 
+f sym.imp.__stack_chk_fail 6 0x00400690 
+f sym.imp.printf 6 0x004006a0 
+f sym.imp.memset 6 0x004006b0 
+f sym.imp.read 6 0x004006c0 
+f sym.imp.__libc_start_main 6 0x004006d0 
+f sym.imp.strcmp 6 0x004006e0 
+f loc.imp.__gmon_start__ 16 0x004006f0 
+f sym.imp.malloc 6 0x00400700 
+f sym.imp.fopen 6 0x00400710 
+fs sections
+f section..interp 28 0x00400238 
+f section_end..interp 0 0x00400254 
+f section..note.ABI_tag 32 0x00400254 
+f section_end..note.ABI_tag 0 0x00400274 
+f section..note.gnu.build_id 36 0x00400274 
+f section_end..note.gnu.build_id 0 0x00400298 
+f section..gnu.hash 28 0x00400298 
+f section_end..gnu.hash 0 0x004002b4 
+f section..dynsym 312 0x004002b8 
+f section_end..dynsym 0 0x004003f0 
+f section..dynstr 160 0x004003f0 
+f section_end..dynstr 0 0x00400490 
+f section..gnu.version 26 0x00400490 
+f section_end..gnu.version 0 0x004004aa 
+f section..gnu.version_r 64 0x004004b0 
+f section_end..gnu.version_r 0 0x004004f0 
+f section..rela.dyn 24 0x004004f0 
+f section_end..rela.dyn 0 0x00400508 
+f section..rela.plt 288 0x00400508 
+f section_end..rela.plt 0 0x00400628 
+f section..init 26 0x00400628 
+f section_end..init 0 0x00400642 
+f section..plt 208 0x00400650 
+f section_end..plt 0 0x00400720 
+f entry0 42 0x00400720 
+f section_end..text 0 0x00400e82 
+f section..fini 9 0x00400e84 
+f section_end..fini 0 0x00400e8d 
+f section..rodata 358 0x00400e90 
+f section_end..rodata 0 0x00400ff6 
+f section..eh_frame_hdr 116 0x00400ff8 
+f section_end..eh_frame_hdr 0 0x0040106c 
+f section..eh_frame 500 0x00401070 
+f section_end..eh_frame 0 0x00401264 
+f section..init_array 8 0x00601e10 
+f section_end..init_array 0 0x00601e18 
+f section..fini_array 8 0x00601e18 
+f section_end..fini_array 0 0x00601e20 
+f section..jcr 8 0x00601e20 
+f section_end..jcr 0 0x00601e28 
+f section..dynamic 464 0x00601e28 
+f section_end..dynamic 0 0x00601ff8 
+f section..got 8 0x00601ff8 
+f section_end..got 0 0x00602000 
+f section..got.plt 120 0x00602000 
+f section_end..got.plt 0 0x00602078 
+f section..data 24 0x00602078 
+f section_end..data 0 0x00602090 
+f section..bss 640 0x006020a0 
+f section_end..bss 0 0x00602320 
+f section..comment 36 0x00000000 
+f section_end..comment 0 0x00000024 
+f section..shstrtab 248 0x00000000 
+f section_end..shstrtab 0 0x000000f8 
+f section.phdr0 4708 0x00400000 
+f section_end.phdr0 0 0x00401264 
+f section.phdr1 640 0x00601e10 
+f section_end.phdr1 0 0x00602090 
+f section.ehdr 10416 0x00400000 
+f section_end.ehdr 0 0x00400040 
+f section..text 1890 0x00400720 
+fs *
+f sym.memory 512 0x00602120 
+fs functions
+f fcn.vmloop 542 0x00400a45 
+fs *
+f sym.instr_dirty 36 0x006020e0 
+fs *
+f sym.good_if_ne_zero 4 0x00602104 
+fs *
+f sym.good_if_le_9 4 0x006020f0 
+fs *
+f r15 1 0x00000000 
+fs *
+f r14 1 0x00000000 
+fs *
+f r13 1 0x00000000 
+fs *
+f r12 1 0x00000000 
+fs *
+f r11 1 0x00000000 
+fs *
+f r10 1 0x00000000 
+fs *
+f r9 1 0x00000000 
+fs *
+f r8 1 0x00000000 
+fs *
+f rdi 1 0x00000000 
+fs *
+f rsi 1 0x00000000 
+fs *
+f rbp 1 0x00000000 
+fs *
+f rbx 1 0x00000000 
+fs *
+f rdx 1 0x00000000 
+fs *
+f rcx 1 0x00000000 
+fs *
+f rax 1 0x00000000 
+fs *
+f trapno 1 0x00000000 
+fs *
+f err 1 0x00000000 
+fs *
+f rip 1 0x00400722 
+fs *
+f rflags 1 0x00000000 
+fs *
+f rsp 1 0x00000000 
+fs *
+f fcn.00400a45 542 0x00400a45 
+fs *
+f not_instr 1 0x00400c04 
+fs *
+f instr_A 1 0x00400a80 
+fs *
+f instr_C 1 0x00400b6d 
+fs *
+f instr_D 1 0x00400b17 
+fs *
+f instr_I 1 0x00400aec 
+fs *
+f instr_J 1 0x00400bc1 
+fs *
+f instr_P 1 0x00400b42 
+fs *
+f instr_R 1 0x00400be5 
+fs *
+f instr_S 1 0x00400ab6 
+fs *
+f instr_X 1 0x00400b99 
+fs *
+f sym.written_by_instr_C 4 0x006020c0 
+fs functions
+f fcn.instr_I 37 0x00400961 
+f fcn.instr_D 37 0x0040093c 
+f fcn.instr_P 50 0x00400986 
+f fcn.instr_X 38 0x00400a1f 
+f fcn.instr_A 146 0x0040080d 
+f fcn.instr_S 157 0x0040089f 
+f fcn.instr_J 103 0x004009b8 
+f fcn.0040080d 146 0x0040080d 
+f fcn.0040089f 157 0x0040089f 
+f fcn.00400961 37 0x00400961 
+f fcn.0040093c 37 0x0040093c 
+f fcn.00400a1f 38 0x00400a1f 
+f fcn.004009b8 103 0x004009b8 
+fs *
+f sym.current_memory_ptr 8 0x00602088 
+fs functions
+f fcn.004006f0 6 0x004006f0 
+f fcn.00400986 50 0x00400986 
+# eval
+"e anal.a2f = false"
+"e anal.afterjmp = false"
+"e anal.arch = x86"
+"e anal.bbsplit = true"
+"e anal.calls = false"
+"e anal.cpu = x86"
+"e anal.depth = 16"
+"e anal.eobjmp = false"
+"e anal.esil = false"
+"e anal.from = 0xffffffffffffffff"
+"e anal.gp = 0"
+"e anal.hasnext = false"
+"e anal.limits = false"
+"e anal.maxreflines = 0"
+"e anal.noncode = false"
+"e anal.nopskip = true"
+"e anal.prelude = "
+"e anal.ptrdepth = 3"
+"e anal.recont = false"
+"e anal.sleep = 0"
+"e anal.split = true"
+"e anal.to = 0xffffffffffffffff"
+"e anal.trace = false"
+"e asm.arch = x86"
+"e asm.bits = 64"
+"e asm.bytes = true"
+"e asm.bytespace = false"
+"e asm.calls = false"
+"e asm.cmtcol = 45"
+"e asm.cmtflgrefs = true"
+"e asm.cmtfold = false"
+"e asm.cmtright = true"
+"e asm.comments = true"
+"e asm.cpu = x86"
+"e asm.cycles = false"
+"e asm.cyclespace = false"
+"e asm.decode = false"
+"e asm.demangle = true"
+"e asm.describe = false"
+"e asm.dwarf = false"
+"e asm.emu = false"
+"e asm.esil = false"
+"e asm.family = false"
+"e asm.fcncalls = true"
+"e asm.fcnlines = true"
+"e asm.features = "
+"e asm.filter = true"
+"e asm.flags = true"
+"e asm.flagsinbytes = false"
+"e asm.functions = true"
+"e asm.indent = false"
+"e asm.indentspace = 2"
+"e asm.invhex = false"
+"e asm.lbytes = true"
+"e asm.lines = true"
+"e asm.lines.call = false"
+"e asm.lines.ret = false"
+"e asm.linesout = true"
+"e asm.linesright = false"
+"e asm.linesup = true"
+"e asm.lineswide = false"
+"e asm.lineswidth = 7"
+"e asm.marks = true"
+"e asm.maxrefs = 5"
+"e asm.middle = false"
+"e asm.midflags = true"
+"e asm.nbytes = 6"
+"e asm.offset = true"
+"e asm.os = linux"
+"e asm.parser = x86.pseudo"
+"e asm.pcalign = 0"
+"e asm.pseudo = false"
+"e asm.reloff = false"
+"e asm.section = false"
+"e asm.segoff = false"
+"e asm.size = false"
+"e asm.slow = true"
+"e asm.stackptr = false"
+"e asm.syntax = intel"
+"e asm.tabs = 0"
+"e asm.tabsoff = 0"
+"e asm.tabsonce = false"
+"e asm.trace = false"
+"e asm.tracespace = false"
+"e asm.ucase = false"
+"e asm.vars = true"
+"e asm.varsub = true"
+"e asm.varxs = false"
+"e asm.xrefs = true"
+"e bin.baddr = 4194304"
+"e bin.classes = true"
+"e bin.demangle = false"
+"e bin.dwarf = true"
+"e bin.filter = true"
+"e bin.force = "
+"e bin.laddr = 0"
+"e bin.lang = c"
+"e bin.maxstr = 0"
+"e bin.maxstrbuf = 0x00a00000"
+"e bin.minstr = 0"
+"e bin.prefix = "
+"e bin.rawstr = false"
+"e bin.strfilter = "
+"e bin.strings = false"
+"e bin.strpurge = false"
+"e cfg.bigendian = false"
+"e cfg.debug = false"
+"e cfg.editor = vim"
+"e cfg.fortunes = true"
+"e cfg.fortunetype = tips,fun"
+"e cfg.hashlimit = 0x00a00000"
+"e cfg.plugins = true"
+"e cfg.prefixdump = dump"
+"e cfg.sandbox = false"
+"e cfg.user = pid25866"
+"e cfg.wseek = false"
+"e cmd.bp = "
+"e cmd.cprompt = "
+"e cmd.depth = 10"
+"e cmd.esil.intr = "
+"e cmd.esil.trap = "
+"e cmd.fcn.delete = "
+"e cmd.fcn.new = "
+"e cmd.fcn.rename = "
+"e cmd.gprompt = "
+"e cmd.graph = ?e cannot find a valid picture viewer"
+"e cmd.hit = "
+"e cmd.open = "
+"e cmd.prompt = "
+"e cmd.repeat = true"
+"e cmd.stack = "
+"e cmd.times = "
+"e cmd.visual = "
+"e cmd.vprompt = "
+"e cmd.xterm = xterm -bg black -fg gray -e"
+"e dbg.args = "
+"e dbg.backend = native"
+"e dbg.bep = loader"
+"e dbg.bpinmaps = true"
+"e dbg.bpsize = 1"
+"e dbg.btalgo = fuzzy"
+"e dbg.btdepth = 128"
+"e dbg.clone = false"
+"e dbg.execs = false"
+"e dbg.follow = 64"
+"e dbg.forks = false"
+"e dbg.libs = "
+"e dbg.profile = "
+"e dbg.shallow_trace = false"
+"e dbg.slow = false"
+"e dbg.status = false"
+"e dbg.swstep = false"
+"e dbg.threads = false"
+"e dbg.trace = false"
+"e dbg.trace.tag = 0"
+"e dbg.unlibs = "
+"e diff.bare = false"
+"e diff.from = 0x0040089f"
+"e diff.to = 0x0040080d"
+"e dir.magic = /home/sghctoma/bin/prefix/radare2//lib/radare2/0.10.0-git/magic"
+"e dir.plugins = /home/sghctoma/bin/prefix/radare2//lib/radare2/0.10.0-git/"
+"e dir.projects = ~/.config/radare2/projects"
+"e dir.source = "
+"e dir.types = /usr/include"
+"e esil.debug = false"
+"e esil.exectrap = false"
+"e esil.gotolimit = 0x00001000"
+"e esil.iotrap = true"
+"e esil.prestep = true"
+"e esil.romem = false"
+"e esil.stats = false"
+"e file.analyze = true"
+"e file.desc = "
+"e file.loadalign = 0x00000400"
+"e file.loadmethod = fail"
+"e file.location = "
+"e file.md5 = 5926ebfcb9a63fbf8c0d5ec81b710d30"
+"e file.nowarn = true"
+"e file.openmany = 1"
+"e file.path = /usr/home/sghctoma/shared/avatao/reverse4"
+"e file.project = reverse4"
+"e file.sha1 = f1a8c65982ac4168f5b37298ffa9bcd9a8243092"
+"e file.type = elf"
+"e fs.view = normal"
+"e graph.font = Courier"
+"e graph.from = 0xffffffffffffffff"
+"e graph.invscroll = false"
+"e graph.offset = false"
+"e graph.scroll = 5"
+"e graph.title = "
+"e graph.to = 0xffffffffffffffff"
+"e graph.web = false"
+"e hex.cols = 14"
+"e hex.flagsz = 0"
+"e hex.onechar = false"
+"e hex.pairs = true"
+"e hex.stride = 0"
+"e http.allow = "
+"e http.bind = localhost"
+"e http.browser = firefox"
+"e http.cors = false"
+"e http.dietime = 0"
+"e http.dirlist = false"
+"e http.maxsize = 0"
+"e http.port = 9090"
+"e http.root = /home/sghctoma/bin/prefix/radare2//share/radare2/0.10.0-git/www"
+"e http.sandbox = false"
+"e http.timeout = 3"
+"e http.ui = p"
+"e http.upget = false"
+"e http.upload = false"
+"e http.uproot = /tmp"
+"e http.uri = "
+"e http.verbose = true"
+"e hud.path = "
+"e io.aslr = false"
+"e io.autofd = true"
+"e io.buffer = false"
+"e io.buffer.from = 0"
+"e io.buffer.to = 0"
+"e io.cache = false"
+"e io.enforce = 0"
+"e io.ff = true"
+"e io.raw = false"
+"e io.sectonly = false"
+"e io.va = true"
+"e io.vio = false"
+"e key.S = "
+"e key.f1 = "
+"e key.f10 = "
+"e key.f11 = "
+"e key.f12 = "
+"e key.f2 = dbs $$"
+"e key.f3 = "
+"e key.f4 = "
+"e key.f5 = "
+"e key.f6 = "
+"e key.f7 = ds"
+"e key.f8 = dso"
+"e key.f9 = dc"
+"e key.s = "
+"e magic.depth = 100"
+"e pdb.extract = 1"
+"e pdb.server = http://msdl.microsoft.com/download/symbols"
+"e pdb.user_agent = Microsoft-Symbol-Server/6.11.0001.402"
+"e rap.loop = true"
+"e rop.comments = false"
+"e rop.conditional = false"
+"e rop.len = 5"
+"e rop.nx = false"
+"e rop.subchains = false"
+"e scr.atport = false"
+"e scr.color = true"
+"e scr.colorops = true"
+"e scr.columns = 0"
+"e scr.echo = false"
+"e scr.feedback = 1"
+"e scr.fgets = false"
+"e scr.fix_columns = 0"
+"e scr.fix_rows = 0"
+"e scr.fps = false"
+"e scr.highlight = "
+"e scr.histsave = true"
+"e scr.html = false"
+"e scr.interactive = true"
+"e scr.nkey = fun"
+"e scr.null = false"
+"e scr.pager = "
+"e scr.pipecolor = false"
+"e scr.prompt = true"
+"e scr.promptfile = false"
+"e scr.promptflag = false"
+"e scr.promptsect = false"
+"e scr.responsive = false"
+"e scr.rgbcolor = true"
+"e scr.rows = 0"
+"e scr.seek = "
+"e scr.tee = "
+"e scr.truecolor = true"
+"e scr.utf8 = false"
+"e scr.wheel = true"
+"e scr.wheelspeed = 4"
+"e search.align = 0"
+"e search.chunk = 0"
+"e search.contiguous = true"
+"e search.count = 0"
+"e search.distance = 0"
+"e search.esilcombo = 8"
+"e search.flags = true"
+"e search.from = 0xffffffffffffffff"
+"e search.in = file"
+"e search.kwidx = 0"
+"e search.maxhits = 0"
+"e search.prefix = hit"
+"e search.show = true"
+"e search.to = 0xffffffffffffffff"
+"e stack.anotated = false"
+"e stack.bytes = true"
+"e stack.delta = 0"
+"e stack.size = 64"
+"e time.fmt = %Y-%m-%d %H:%M:%S %z"
+"e time.zone = 0"
+"e zoom.byte = h"
+"e zoom.from = 0"
+"e zoom.maxsz = 512"
+"e zoom.to = 10416"
+# sections
+f section..interp 28 0x400238
+S 0x00000238 0x00400238 0x0000001c 0x0000001c .interp -r--
+f section..note.ABI_tag 32 0x400254
+S 0x00000254 0x00400254 0x00000020 0x00000020 .note.ABI_tag -r--
+f section..note.gnu.build_id 36 0x400274
+S 0x00000274 0x00400274 0x00000024 0x00000024 .note.gnu.build_id -r--
+f section..gnu.hash 28 0x400298
+S 0x00000298 0x00400298 0x0000001c 0x0000001c .gnu.hash -r--
+f section..dynsym 312 0x4002b8
+S 0x000002b8 0x004002b8 0x00000138 0x00000138 .dynsym -r--
+f section..dynstr 160 0x4003f0
+S 0x000003f0 0x004003f0 0x000000a0 0x000000a0 .dynstr -r--
+f section..gnu.version 26 0x400490
+S 0x00000490 0x00400490 0x0000001a 0x0000001a .gnu.version -r--
+f section..gnu.version_r 64 0x4004b0
+S 0x000004b0 0x004004b0 0x00000040 0x00000040 .gnu.version_r -r--
+f section..rela.dyn 24 0x4004f0
+S 0x000004f0 0x004004f0 0x00000018 0x00000018 .rela.dyn -r--
+f section..rela.plt 288 0x400508
+S 0x00000508 0x00400508 0x00000120 0x00000120 .rela.plt -r--
+f section..init 26 0x400628
+S 0x00000628 0x00400628 0x0000001a 0x0000001a .init -r-x
+f section..plt 208 0x400650
+S 0x00000650 0x00400650 0x000000d0 0x000000d0 .plt -r-x
+f section..text 1890 0x400720
+S 0x00000720 0x00400720 0x00000762 0x00000762 .text -r-x
+f section..fini 9 0x400e84
+S 0x00000e84 0x00400e84 0x00000009 0x00000009 .fini -r-x
+f section..rodata 358 0x400e90
+S 0x00000e90 0x00400e90 0x00000166 0x00000166 .rodata -r--
+f section..eh_frame_hdr 116 0x400ff8
+S 0x00000ff8 0x00400ff8 0x00000074 0x00000074 .eh_frame_hdr -r--
+f section..eh_frame 500 0x401070
+S 0x00001070 0x00401070 0x000001f4 0x000001f4 .eh_frame -r--
+f section..init_array 8 0x601e10
+S 0x00001e10 0x00601e10 0x00000008 0x00000008 .init_array -rw-
+f section..fini_array 8 0x601e18
+S 0x00001e18 0x00601e18 0x00000008 0x00000008 .fini_array -rw-
+f section..jcr 8 0x601e20
+S 0x00001e20 0x00601e20 0x00000008 0x00000008 .jcr -rw-
+f section..dynamic 464 0x601e28
+S 0x00001e28 0x00601e28 0x000001d0 0x000001d0 .dynamic -rw-
+f section..got 8 0x601ff8
+S 0x00001ff8 0x00601ff8 0x00000008 0x00000008 .got -rw-
+f section..got.plt 120 0x602000
+S 0x00002000 0x00602000 0x00000078 0x00000078 .got.plt -rw-
+f section..data 24 0x602078
+S 0x00002078 0x00602078 0x00000018 0x00000018 .data -rw-
+f section..bss 640 0x6020a0
+S 0x00002090 0x006020a0 0x00000280 0x00000280 .bss -rw-
+f section..comment 36 0x0
+S 0x00002090 0x00000000 0x00000024 0x00000024 .comment ----
+f section..shstrtab 248 0x0
+S 0x000020b4 0x00000000 0x000000f8 0x000000f8 .shstrtab ----
+f section.phdr0 4708 0x400000
+S 0x00000000 0x00400000 0x00001264 0x00200000 phdr0 mr-x
+f section.phdr1 640 0x601e10
+S 0x00001e10 0x00601e10 0x00000280 0x00200000 phdr1 mrw-
+f section.ehdr 10416 0x400000
+S 0x00000000 0x00400000 0x000028b0 0x000028b0 ehdr -rwx
+# meta
+Cs 7 @ 0x00400e98 # Wrong_
+Cs 27 @ 0x00400e9f # We_are_in_the_outer_space_
+Cs 18 @ 0x00400f80 # Size_of_data:__u_n
+Cs 23 @ 0x00400f92 # Such_VM__MuCH_reV3rse_
+Cs 16 @ 0x00400fa9 # Use_everything_
+Cs 9 @ 0x00400fbb # flag.txt
+Cs 26 @ 0x00400fc7 # You_won__The_flag_is:__s_n
+Cs 21 @ 0x00400fe1 # Your_getting_closer_
+CCu base64:WzBdIHZhPTB4MDA0MDAyMzggcGE9MHgwMDAwMDIzOCBzej0yOCB2c3o9Mjggcnd4PS0tci0tIC5pbnRlcnA= @ 0x00400238
+CCu base64:WzFdIHZhPTB4MDA0MDAyNTQgcGE9MHgwMDAwMDI1NCBzej0zMiB2c3o9MzIgcnd4PS0tci0tIC5ub3RlLkFCSV90YWc= @ 0x00400254
+CCu base64:WzJdIHZhPTB4MDA0MDAyNzQgcGE9MHgwMDAwMDI3NCBzej0zNiB2c3o9MzYgcnd4PS0tci0tIC5ub3RlLmdudS5idWlsZF9pZA== @ 0x00400274
+CCu base64:WzNdIHZhPTB4MDA0MDAyOTggcGE9MHgwMDAwMDI5OCBzej0yOCB2c3o9Mjggcnd4PS0tci0tIC5nbnUuaGFzaA== @ 0x00400298
+CCu base64:WzRdIHZhPTB4MDA0MDAyYjggcGE9MHgwMDAwMDJiOCBzej0zMTIgdnN6PTMxMiByd3g9LS1yLS0gLmR5bnN5bQ== @ 0x004002b8
+CCu base64:WzVdIHZhPTB4MDA0MDAzZjAgcGE9MHgwMDAwMDNmMCBzej0xNjAgdnN6PTE2MCByd3g9LS1yLS0gLmR5bnN0cg== @ 0x004003f0
+CCu base64:WzZdIHZhPTB4MDA0MDA0OTAgcGE9MHgwMDAwMDQ5MCBzej0yNiB2c3o9MjYgcnd4PS0tci0tIC5nbnUudmVyc2lvbg== @ 0x00400490
+CCu base64:WzddIHZhPTB4MDA0MDA0YjAgcGE9MHgwMDAwMDRiMCBzej02NCB2c3o9NjQgcnd4PS0tci0tIC5nbnUudmVyc2lvbl9y @ 0x004004b0
+CCu base64:WzhdIHZhPTB4MDA0MDA0ZjAgcGE9MHgwMDAwMDRmMCBzej0yNCB2c3o9MjQgcnd4PS0tci0tIC5yZWxhLmR5bg== @ 0x004004f0
+CCu base64:WzldIHZhPTB4MDA0MDA1MDggcGE9MHgwMDAwMDUwOCBzej0yODggdnN6PTI4OCByd3g9LS1yLS0gLnJlbGEucGx0 @ 0x00400508
+CCu base64:WzEwXSB2YT0weDAwNDAwNjI4IHBhPTB4MDAwMDA2Mjggc3o9MjYgdnN6PTI2IHJ3eD0tLXIteCAuaW5pdA== @ 0x00400628
+CCu base64:WzExXSB2YT0weDAwNDAwNjUwIHBhPTB4MDAwMDA2NTAgc3o9MjA4IHZzej0yMDggcnd4PS0tci14IC5wbHQ= @ 0x00400650
+CCu base64:WzEyXSB2YT0weDAwNDAwNzIwIHBhPTB4MDAwMDA3MjAgc3o9MTg5MCB2c3o9MTg5MCByd3g9LS1yLXggLnRleHQ= @ 0x00400720
+CCu base64:WzEzXSB2YT0weDAwNDAwZTg0IHBhPTB4MDAwMDBlODQgc3o9OSB2c3o9OSByd3g9LS1yLXggLmZpbmk= @ 0x00400e84
+CCu base64:WzE0XSB2YT0weDAwNDAwZTkwIHBhPTB4MDAwMDBlOTAgc3o9MzU4IHZzej0zNTggcnd4PS0tci0tIC5yb2RhdGE= @ 0x00400e90
+CCu base64:WzE1XSB2YT0weDAwNDAwZmY4IHBhPTB4MDAwMDBmZjggc3o9MTE2IHZzej0xMTYgcnd4PS0tci0tIC5laF9mcmFtZV9oZHI= @ 0x00400ff8
+CCu base64:WzE2XSB2YT0weDAwNDAxMDcwIHBhPTB4MDAwMDEwNzAgc3o9NTAwIHZzej01MDAgcnd4PS0tci0tIC5laF9mcmFtZQ== @ 0x00401070
+CCu base64:WzI4XSB2YT0weDAwNjAxZTEwIHBhPTB4MDAwMDFlMTAgc3o9NjQwIHZzej0yMDk3MTUyIHJ3eD1tLXJ3LSBwaGRyMQ== @ 0x00601e10
+CCu base64:WzE4XSB2YT0weDAwNjAxZTE4IHBhPTB4MDAwMDFlMTggc3o9OCB2c3o9OCByd3g9LS1ydy0gLmZpbmlfYXJyYXk= @ 0x00601e18
+CCu base64:WzE5XSB2YT0weDAwNjAxZTIwIHBhPTB4MDAwMDFlMjAgc3o9OCB2c3o9OCByd3g9LS1ydy0gLmpjcg== @ 0x00601e20
+CCu base64:WzIwXSB2YT0weDAwNjAxZTI4IHBhPTB4MDAwMDFlMjggc3o9NDY0IHZzej00NjQgcnd4PS0tcnctIC5keW5hbWlj @ 0x00601e28
+CCu base64:WzIxXSB2YT0weDAwNjAxZmY4IHBhPTB4MDAwMDFmZjggc3o9OCB2c3o9OCByd3g9LS1ydy0gLmdvdA== @ 0x00601ff8
+CCu base64:WzIyXSB2YT0weDAwNjAyMDAwIHBhPTB4MDAwMDIwMDAgc3o9MTIwIHZzej0xMjAgcnd4PS0tcnctIC5nb3QucGx0 @ 0x00602000
+CCu base64:WzIzXSB2YT0weDAwNjAyMDc4IHBhPTB4MDAwMDIwNzggc3o9MjQgdnN6PTI0IHJ3eD0tLXJ3LSAuZGF0YQ== @ 0x00602078
+CCu base64:WzI0XSB2YT0weDAwNjAyMGEwIHBhPTB4MDAwMDIwOTAgc3o9NjQwIHZzej02NDAgcnd4PS0tcnctIC5ic3M= @ 0x006020a0
+CCu base64:WzI2XSB2YT0weDAwMDAwMDAwIHBhPTB4MDAwMDIwYjQgc3o9MjQ4IHZzej0yNDggcnd4PS0tLS0tIC5zaHN0cnRhYg== @ 0x00000000
+CCu base64:WzI5XSB2YT0weDAwNDAwMDAwIHBhPTB4MDAwMDAwMDAgc3o9NjQgdnN6PTY0IHJ3eD1tLXJ3LSBlaGRy @ 0x00400000
+Cd 512 @ 0x00602120
+Cd 8 @ 0x00400ec0
+Cd 8 @ 0x00400ec8
+Cd 8 @ 0x00400ed0
+Cd 8 @ 0x00400ed8
+Cd 8 @ 0x00400ee0
+Cd 8 @ 0x00400ee8
+Cd 8 @ 0x00400ef0
+Cd 8 @ 0x00400ef8
+Cd 8 @ 0x00400f00
+Cd 8 @ 0x00400f08
+Cd 8 @ 0x00400f10
+Cd 8 @ 0x00400f18
+Cd 8 @ 0x00400f20
+Cd 8 @ 0x00400f28
+Cd 8 @ 0x00400f30
+Cd 8 @ 0x00400f38
+Cd 8 @ 0x00400f40
+Cd 8 @ 0x00400f48
+Cd 8 @ 0x00400f50
+Cd 8 @ 0x00400f58
+Cd 8 @ 0x00400f60
+Cd 8 @ 0x00400f68
+Cd 8 @ 0x00400f70
+Cd 8 @ 0x00400f78
+ax 0x400e80 0x0
+ax 0x400e10 0x0
+ax 0x400c63 0x0
+ax 0x4006d0 0x0
+ax 0x602050 0x0
+ax 0x28 0x0
+ax 0x4006c0 0x0
+ax 0xbb8 0x0
+ax 0x400f80 0x0
+ax 0x4006a0 0x0
+ax 0x400700 0x0
+ax 0x4006c0 0x0
+ax 0x200 0x0
+ax 0x602120 0x0
+ax 0x4006b0 0x0
+ax 0x400a45 0x0
+ax 0x2a 0x0
+ax 0x400690 0x0
+ax 0x400f92 0x0
+ax 0x602120 0x0
+ax 0x4006e0 0x0
+ax 0x602120 0x0
+ax 0x400670 0x0
+ax 0x400d65 0x0
+ax 0x8 0x0
+ax 0x6020e0 0x0
+ax 0x602104 0x0
+ax 0x400fe1 0x0
+ax 0x400670 0x0
+ax 0x400de8 0x0
+ax 0x6020f0 0x0
+ax 0x9 0x0
+ax 0x400fb9 0x0
+ax 0x400fbb 0x0
+ax 0x400710 0x0
+ax 0x400fc4 0x0
+ax 0x400660 0x0
+ax 0x400fc7 0x0
+ax 0x4006a0 0x0
+ax 0x400680 0x0
+ax 0x400de8 0x0
+ax 0x400fa9 0x0
+ax 0x400670 0x0
+ax 0x400ded 0x0
+ax 0xbb8 0x0
+ax 0x602018 0x0
+ax 0x602020 0x0
+ax 0x602028 0x0
+ax 0x602030 0x0
+ax 0x602038 0x0
+ax 0x602040 0x0
+ax 0x602048 0x0
+ax 0x602058 0x0
+ax 0x602068 0x0
+ax 0x602070 0x0
+ax 0x602120 0x0
+ax 0x400c4d 0x0
+ax 0x17 0x0
+ax 0x400e98 0x0
+ax 0x400670 0x0
+ax 0x400c61 0x0
+ax 0x400ec0 0x0
+ax 0x4d 0x0
+ax 0x50 0x0
+ax 0x43 0x0
+ax 0x6020c0 0x0
+ax 0x6020c0 0x0
+ax 0x602088 0x0
+ax 0x602088 0x0
+ax 0x40089d 0x0
+ax 0x602088 0x0
+ax 0x602088 0x0
+ax 0x40089d 0x0
+ax 0x4d 0x0
+ax 0x50 0x0
+ax 0x43 0x0
+ax 0x6020c0 0x0
+ax 0x6020c0 0x0
+ax 0x602088 0x0
+ax 0x602088 0x0
+ax 0x40093a 0x0
+ax 0x602088 0x0
+ax 0x602088 0x0
+ax 0x40093a 0x0
+ax 0x40080d 0x0
+ax 0x40089f 0x0
+ax 0x4d 0x0
+ax 0x50 0x0
+ax 0x602088 0x0
+ax 0x400961 0x0
+ax 0x602088 0x0
+ax 0x602088 0x0
+ax 0x6020c0 0x0
+ax 0x400a1d 0x0
+ax 0x400a1d 0x0
+ax 0x602104 0x0
+ax 0x602104 0x0
+ax 0x601ff8 0x0
+ax 0x4006f0 0x0
+ax 0x602060 0x0
+f entry0 42 0x00400720
+af+ 0x00400720 42 entry0 f n
+afb+ 0x00400720 0x00400720 42 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.__libc_start_main 6 0x004006d0
+af+ 0x004006d0 6 sym.imp.__libc_start_main s n
+afb+ 0x004006d0 0x004006d0 6 0xffffffffffffffff 0xffffffffffffffff n n
+f main 416 0x00400c63
+af+ 0x00400c63 416 main s n
+afb+ 0x00400c63 0x00400c63 67 0x00400cac 0x00400ca6 n n
+afb+ 0x00400c63 0x00400cac 113 0x00400de8 0x00400d1d n n
+afb+ 0x00400c63 0x00400de8 5 0x00400ded 0xffffffffffffffff b n
+afb+ 0x00400c63 0x00400e01 2 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400dfc 5 0x00400e01 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d1d 23 0x00400dde 0x00400d34 n n
+afb+ 0x00400c63 0x00400dde 10 0x00400de8 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d34 9 0x00400d65 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d65 6 0x00400d3d 0x00400d6b n n
+afb+ 0x00400c63 0x00400d3d 16 0x00400d61 0x00400d4d n n
+afb+ 0x00400c63 0x00400d61 4 0x00400d65 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d6b 10 0x00400dd2 0x00400d75 n n
+afb+ 0x00400c63 0x00400dd2 12 0x00400de8 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d75 11 0x00400dd2 0x00400d80 n n
+afb+ 0x00400c63 0x00400d80 82 0x00400de8 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400d4d 20 0x00400ded 0xffffffffffffffff n n
+afb+ 0x00400c63 0x00400ded 15 0x00400e01 0x00400dfc n n
+afb+ 0x00400c63 0x00400ca6 6 0x00400cac 0xffffffffffffffff n n
+afa 8 arg_1 int @ 0x400c63
+afa 3000 arg_375 int @ 0x400c63
+afv 1 local_0_1 int @ 0x400c63
+afv 8 local_1 int @ 0x400c63
+afv 64 local_8 int @ 0x400c63
+afv 72 local_9 int @ 0x400c63
+afv 80 bytecode int @ 0x400c63
+afv 84 i int @ 0x400c63
+afv 86 bytecode_length int @ 0x400c63
+f sym.imp.__isoc99_fscanf 6 0x00400660
+af+ 0x00400660 6 sym.imp.__isoc99_fscanf s n
+afb+ 0x00400660 0x00400660 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.puts 6 0x00400670
+af+ 0x00400670 6 sym.imp.puts s n
+afb+ 0x00400670 0x00400670 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.fclose 6 0x00400680
+af+ 0x00400680 6 sym.imp.fclose s n
+afb+ 0x00400680 0x00400680 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.__stack_chk_fail 6 0x00400690
+af+ 0x00400690 6 sym.imp.__stack_chk_fail s n
+afb+ 0x00400690 0x00400690 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.printf 6 0x004006a0
+af+ 0x004006a0 6 sym.imp.printf s n
+afb+ 0x004006a0 0x004006a0 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.memset 6 0x004006b0
+af+ 0x004006b0 6 sym.imp.memset s n
+afb+ 0x004006b0 0x004006b0 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.read 6 0x004006c0
+af+ 0x004006c0 6 sym.imp.read s n
+afb+ 0x004006c0 0x004006c0 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.strcmp 6 0x004006e0
+af+ 0x004006e0 6 sym.imp.strcmp s n
+afb+ 0x004006e0 0x004006e0 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.malloc 6 0x00400700
+af+ 0x00400700 6 sym.imp.malloc s n
+afb+ 0x00400700 0x00400700 6 0xffffffffffffffff 0xffffffffffffffff n n
+f sym.imp.fopen 6 0x00400710
+af+ 0x00400710 6 sym.imp.fopen s n
+afb+ 0x00400710 0x00400710 6 0xffffffffffffffff 0xffffffffffffffff n n
+f fcn.00400a45 542 0x00400a45
+af+ 0x00400a45 542 fcn.00400a45 f n
+afC fastcall @ 0x00400a45
+afb+ 0x00400a45 0x00400a45 25 0x00400c4d 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400a5e 22 0x00400c04 0x00400a74 n n
+afb+ 0x00400a45 0x00400a74 12 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400a80 54 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400c04 17 0x00400c61 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400c4d 15 0x00400a5e 0x00400c5c n n
+afb+ 0x00400a45 0x00400c5c 5 0x00400c61 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400c61 2 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400ab6 54 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400aec 43 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400b17 43 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400b42 43 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400b6d 44 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400b99 40 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400bc1 36 0x00400c15 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400be5 31 0x00400c61 0xffffffffffffffff n n
+afb+ 0x00400a45 0x00400c15 24 0x00400c3c 0x00400c2d n n
+afb+ 0x00400a45 0x00400c2d 15 0x00400c4d 0x00400c3c n n
+afb+ 0x00400a45 0x00400c3c 17 0x00400c61 0xffffffffffffffff n n
+afa 6299936 arg_787492 int @ 0x400a45
+afv 1 local_0_1 int @ 0x400a45
+afv 8 memory qword @ 0x400a45
+afv 12 instr_ptr_step dword @ 0x400a45
+afv 24 bytecode int @ 0x400a45
+f fcn.0040080d 146 0x0040080d
+af+ 0x0040080d 146 fcn.0040080d f n
+afb+ 0x0040080d 0x0040080d 19 0x0040089d 0x00400820 n n
+afb+ 0x0040080d 0x0040089d 2 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x0040080d 0x00400820 7 0x0040089d 0x00400827 n n
+afb+ 0x0040080d 0x00400827 11 0x00400852 0x00400832 n n
+afb+ 0x0040080d 0x00400852 11 0x0040087a 0x0040085d n n
+afb+ 0x0040080d 0x0040087a 11 0x0040089d 0x00400885 n n
+afb+ 0x0040080d 0x00400885 24 0x0040089d 0xffffffffffffffff n n
+afb+ 0x0040080d 0x0040085d 29 0x0040089d 0xffffffffffffffff n n
+afb+ 0x0040080d 0x00400832 32 0x0040089d 0xffffffffffffffff n n
+afv 0 local_0 int @ 0x40080d
+afv 1 local_0_1 int @ 0x40080d
+afv 8 arg1 int @ 0x40080d
+afv 16 arg2 int @ 0x40080d
+f fcn.0040089f 157 0x0040089f
+af+ 0x0040089f 157 fcn.0040089f f n
+afb+ 0x0040089f 0x0040089f 23 0x0040093a 0x004008b6 n n
+afb+ 0x0040089f 0x0040093a 2 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x0040089f 0x004008b6 7 0x0040093a 0x004008bd n n
+afb+ 0x0040089f 0x004008bd 11 0x004008ea 0x004008c8 n n
+afb+ 0x0040089f 0x004008ea 11 0x00400915 0x004008f5 n n
+afb+ 0x0040089f 0x00400915 11 0x0040093a 0x00400920 n n
+afb+ 0x0040089f 0x00400920 26 0x0040093a 0xffffffffffffffff n n
+afb+ 0x0040089f 0x004008f5 32 0x0040093a 0xffffffffffffffff n n
+afb+ 0x0040089f 0x004008c8 34 0x0040093a 0xffffffffffffffff n n
+afv 0 local_0 int @ 0x40089f
+afv 1 local_0_1 int @ 0x40089f
+afv 8 local_1 int @ 0x40089f
+afv 16 local_2 int @ 0x40089f
+f fcn.00400961 37 0x00400961
+af+ 0x00400961 37 fcn.00400961 f n
+afb+ 0x00400961 0x00400961 37 0xffffffffffffffff 0xffffffffffffffff n n
+afv 1 local_0_1 int @ 0x400961
+afv 24 local_3 int @ 0x400961
+f fcn.0040093c 37 0x0040093c
+af+ 0x0040093c 37 fcn.0040093c f n
+afb+ 0x0040093c 0x0040093c 37 0xffffffffffffffff 0xffffffffffffffff n n
+afv 1 local_0_1 int @ 0x40093c
+afv 24 local_3 int @ 0x40093c
+f fcn.00400986 50 0x00400986
+af+ 0x00400986 50 fcn.00400986 f n
+afb+ 0x00400986 0x00400986 50 0xffffffffffffffff 0xffffffffffffffff n n
+afa 77 arg_9_5 int @ 0x400986
+afa 80 arg_10 int @ 0x400986
+afv 1 const_M int @ 0x400986
+afv 2 const_P int @ 0x400986
+afv 24 arg1 int @ 0x400986
+f fcn.00400a1f 38 0x00400a1f
+af+ 0x00400a1f 38 fcn.00400a1f f n
+afb+ 0x00400a1f 0x00400a1f 38 0xffffffffffffffff 0xffffffffffffffff n n
+afv 1 local_0_1 int @ 0x400a1f
+afv 8 arg1 int @ 0x400a1f
+f fcn.004009b8 103 0x004009b8
+af+ 0x004009b8 103 fcn.004009b8 f n
+afb+ 0x004009b8 0x004009b8 41 0x004009e4 0x004009e1 n n
+afb+ 0x004009b8 0x004009e4 11 0x00400a1a 0x004009ef n n
+afb+ 0x004009b8 0x00400a1a 3 0x00400a1d 0xffffffffffffffff b n
+afb+ 0x004009b8 0x004009ef 10 0x00400a13 0x004009f9 n n
+afb+ 0x004009b8 0x00400a13 7 0x00400a1d 0xffffffffffffffff n n
+afb+ 0x004009b8 0x00400a1d 2 0xffffffffffffffff 0xffffffffffffffff n n
+afb+ 0x004009b8 0x004009f9 6 0x00400a0e 0x004009ff n n
+afb+ 0x004009b8 0x00400a0e 5 0x00400a1d 0xffffffffffffffff n n
+afb+ 0x004009b8 0x004009ff 15 0x00400a0e 0xffffffffffffffff n n
+afb+ 0x004009b8 0x004009e1 3 0x004009e4 0xffffffffffffffff n n
+afv 0 local_0 int @ 0x4009b8
+afv 1 local_0_1 int @ 0x4009b8
+afv 4 arg1_and_0x3f int @ 0x4009b8
+afv 24 arg1 int @ 0x4009b8
+f section..init 26 0x00400628
+af+ 0x00400628 26 section..init f n
+afb+ 0x00400628 0x00400628 16 0x0040063d 0x00400638 n n
+afb+ 0x00400628 0x00400638 5 0x0040063d 0xffffffffffffffff n n
+afb+ 0x00400628 0x0040063d 5 0xffffffffffffffff 0xffffffffffffffff n n
+f fcn.004006f0 6 0x004006f0
+af+ 0x004006f0 6 fcn.004006f0 f n
+afb+ 0x004006f0 0x004006f0 6 0xffffffffffffffff 0xffffffffffffffff n n
+# seek
+s 0x00400be5
