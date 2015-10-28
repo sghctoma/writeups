@@ -5,7 +5,7 @@ Solving avatao's "R3v3rs3 4"
 ------
 
 After a few years of missing out on wargames at
-[Hacktivity](htpps://hacktivity.com), this year I've finally found the time to
+[Hacktivity](https://hacktivity.com), this year I've finally found the time to
 begin, and almost finish (yeah, I'm quite embarrassed about that unfinished
 webhack :) ) one of them. There were 3 different games at the conf, and I've
 chosen the one that was provided by [avatao](https://avatao.com). It consisted
@@ -18,7 +18,7 @@ exercises too.  You can find these challenges on https://platform.avatao.com.
 
 I've decided to solve the reversing challenges using
 [radare2](http://www.radare.org/r/), a free and open source reverse engineering
-framework. I have first learned about r2 back in 2011 during a huge project,
+framework. I have first learned about r2 back in 2011. during a huge project,
 where I had to reverse a massive, 11MB statically linked ELF. I simply needed
 something that I could easily patch Linux ELFs with.  Granted, back then I've
 used r2 alongside IDA, and only for smaller tasks, but I loved the whole concept
@@ -30,7 +30,7 @@ Because this writeup aims to show some of r2's features besides how the crackmes
 can be solved, I will explain every r2 command I use in blockquote paragraphs
 like this one:
 
-> ***r2 tip***: always use ? or -h to get more information!
+> ***r2 tip:*** Always use ? or -h to get more information!
 
 If you know r2, and just interested in the crackme, feel free to skip those
 parts! Also keep in mind please, that because of this tutorial style I'm going
@@ -42,7 +42,7 @@ stuff.
 A few advice if you are interested in learning radare2 (and frankly, if you are
 into RE, you should be interested in learning r2 :) ):
 
-The framework has a lot of supplementary executables and a shitload of
+The framework has a lot of supplementary executables and a vast amount of
 functionality - and they are very well documented. I encourage you to read the
 available docs, and use the built-in help (by appending a ? to any command)
 extensively! E.g.:
@@ -83,6 +83,7 @@ Prefix with number to repeat command N times (f.ex: 3x)
 Also, the project is under heavy development, there is no day
 without commits to the GitHub repo. So, as the readme says, you should always
 use the git version!
+
 Some highly recommended reading materials:
 
 - [Cheatsheet by pwntester](https://github.com/pwntester/cheatsheets/blob/master/radare2.md)
@@ -122,7 +123,7 @@ rpath    NONE
 binsz    8620
 ```
 
-> ***r2 tip***: rabin2 is one of the handy tools that come with radare2. It can
+> ***r2 tip:*** rabin2 is one of the handy tools that comes with radare2. It can
 > be used to extract information (imports, symbols, libraries, etc.) about
 > binary executables. As always, check the help (rabin2 -h)!
 
@@ -140,11 +141,11 @@ Wrong!
 Size of data: 1
 ```
 
-OK, so it reads a number as a size from the standard output first, than reads
-further, probably "size" bytes, or characters, or something like that, processes
-this input, and outputs either "Wrong!", nothingm or something else, presumably
-our flag. But do not waste any more time monkeyfuzzing the executable, let's fire
-up r2, because in asm we trust!
+OK, so it reads a number as a size from the standard input first, than reads
+further, probably "size" bytes/characters, processes this input, and outputs
+either "Wrong!", nothing or something else, presumably our flag. But do not
+waste any more time monkeyfuzzing the executable, let's fire up r2, because in
+asm we trust!
 
 ```
 [0x00 avatao]$ r2 -A reverse4
@@ -152,7 +153,7 @@ up r2, because in asm we trust!
 [0x00400720]>
 ```
 
-> ***r2 tip***: The -A switch runs *aa* command at start to analyze all
+> ***r2 tip:*** The -A switch runs *aa* command at start to analyze all
 > referenced code, so we will have functions, strings, XREFS, etc. right at the
 > beginning. You can also put *e file.analyze* into your .radare2rc, so that all
 > opened executables will be analyzed. As usual, you can get help with *?*.
@@ -166,7 +167,7 @@ avatao_reverse4
 [0x00400720]>
 ```
 
-> ***r2 tip***: You can save a project using Ps [file], and load one using Po [file].
+> ***r2 tip:*** You can save a project using Ps [file], and load one using Po [file].
 > With the -p option, you can load a project when starting r2.
 
 We can list all the strings r2 found:
@@ -187,9 +188,9 @@ We can list all the strings r2 found:
 
 > ***r2 tip***: r2 puts so called flags on important/interesting offsets, and
 > organizes these flags into flagspaces (strings, functions, symbols, etc.) You
-> can list all flagspaces using *fs*. You can also print all flags with *f*, or
-> you can switch flagspaces with *fs [flagspace]*, and print just the flags in
-> the current flag space.
+> can list all flagspaces using *fs*, and switch the current one using
+> *fs [flagspace]* (the default is \*, which means all the flagspaces). The
+> command *f* prints all flags from the currently selected flagspace(s).
 
 OK, the strings looks interesting, especially the one at 0x00400f92. It seems to
 hint that this crackme is based on a virtual machine. Keep that in mind!
@@ -213,8 +214,10 @@ d 0x400dd2 mov edi, str.Your_getting_closer_
 ```
 
 > ***r2 tip***: We can list crossreferences to addresses using the *axt [addr]*
-> command (similarly, we can use *axf [addr]* to list references from address).
-> The *@@* is an iterator, it just runs the command with the arguments listed.
+> command (similarly, we can use *axf* to list references from the address).
+> The *@@* is an iterator, it just runs the command once for every arguments 
+> listed.
+>
 > The argument list in this case comes from the command *f~[0]*. It lists the
 > strings from the executable with *f*, and uses the internal grep command *~*
 > to select only the first column (*[0]*) that contains the strings' addresses.
@@ -230,7 +233,7 @@ that:
 [0x00400c63]>
 ```
 
-> ***r2 tip***: You can go to any offset, flag, expression, etc. in the
+> ***r2 tip:*** You can go to any offset, flag, expression, etc. in the
 > executable using the *s* command (seek). You can use references, like *$$*
 > (current offset), you can undo (*s-*) or redo (*s+*) seeks, search strings
 > (*s/ [string]*) or hex values (*s/x 4142*), and a lot of other useful stuff.
@@ -241,62 +244,35 @@ a disassembly (*pd*, *pdf*), but r2 can do something much cooler: it has a
 visual mode, and it can display graphs similar to IDA, but way cooler, since
 they are ASCII-art graphs :)
 
-It also has a minimap view which is incredibly useful for getting an overall
+> ***r2 tip:*** The command family *p* is used to print stuff. For example it can
+> show disassembly (*pd*), disassembly of the current function (*pdf*), print
+> strings (*ps*), hexdump (*px*), base64 encode/decode data (*p6e*, *p6d*), or
+> print raw bytes (*pr*) so you can for example dump parts of the binary to other
+> files. There are many more functionalities, check *?*!
+
+R2 also has a minimap view which is incredibly useful for getting an overall
 look at a function:
 
 ![main functions's minimap](img/main/main_minimap.png)
 
-> ***r2 tip***: With command *V* you can enter the so-called visual mode, which
+> ***r2 tip:*** With command *V* you can enter the so-called visual mode, which
 > has several views. You can switch between them using *p* and *P*. The graph
 > view can be displayed by hitting *V* in visual mode (or using *VV* at the
-> prompt). Hitting *p* in graph view will bring up the minimap. It displays the
+> prompt).
+>
+> Hitting *p* in graph view will bring up the minimap. It displays the
 > basic blocks and the connections between them in the current function, and it
-> also shows the disassembly of the currently selected block (marked wit @@@@@
+> also shows the disassembly of the currently selected block (marked with @@@@@
 > on the minimap). You can select the next or the previous block using the
-> *<TAB>* and the *<SHIFT><TAB>* keys respectively. You can also select the true
-> or the false branches using the *t* and the *f* keys.
+> \*\<TAB\>\* and the \*\<SHIFT\>\<TAB\>\* keys respectively. You can also
+> select the true or the false branches using the *t* and the *f* keys.
+>
 > It is possible to bring up the prompt in visual mode using the *:* key, and
 > you can use *o* to seek.
 
 Lets read main node-by-node! The first block looks like this:
 
 ![main bb-0c63](img/main/bb-0c63.png)
-
-```
-[0x00400c63]> VV @ main (nodes 18 edges 25 zoom 100%) BB mouse:canvas-y movements-speed:5
-
-0x400c63:
-(fcn) main 416
-; arg int arg_1        @ rbp+0x8
-; arg int arg_375      @ rbp+0xbb8
-; var int local_0_1    @ rbp-0x1
-; var int local_1      @ rbp-0x8
-; var int local_8      @ rbp-0x40                                         <@@@@@@>
-; var int local_9      @ rbp-0x48                                              f t
-; var int local_10     @ rbp-0x50                                       .------' '-.
-; var int local_10_4   @ rbp-0x54                                       |          |
-; var int size         @ rbp-0x56                                       |          |
-; DATA XREF from 0x0040073d (main)                                 [_0ca6_]        |
-push rbp                                                            v              |
-mov rbp, rsp                                                        |     .--------'
-sub rsp, 0x70                                                       |     |
-mov dword [rbp - 0x64], edi                                         |     |
-mov qword [rbp - 0x70], rsi                                        [_0cac_]
-mov rax, qword fs:[0x28] ; [0x28:8]=0x21b0  ; '('                       f t
-mov qword [rbp-local_1], rax                             .--------------' '--------.
-xor eax, eax                                             |                         |
-lea rax, [rbp-size]                                      |                         |
-mov edx, 2                                          [_0d1d_]                       |
-mov rsi, rax                                           t f                         |
-mov edi, 0                                   .---------' '---------.               |
-mov eax, 0                                   |                     |               |
-call sym.imp.read ;[a]                       |                     |               |
-movzx eax, word [rbp-size]                [_0dde_]            [_0d34_]             |
-cmp ax, 0xbb8                              v                   v                   |
-jbe 0x400cac ;[b]                          |                   |                   |
-                                           |                   |                   |
-
-```
 
 We can see that the program reads a word (2 bytes) into the local variable named
 *local_10_6*, and than compares it to 0xbb8. Thats 3000 in decimal, btw:
@@ -318,11 +294,13 @@ There are a few things happening in the next block:
 ![main bb-0cac](img/main/bb-0cac.png)
 
 First, the "Size of data: " message we saw when we run the program is printed.
-So now we know, that the local variable *local_10_6* is the size of the input
+So now we know that the local variable *local_10_6* is the size of the input
 data - so lets name it accordingly (remember, you can open the r2 shell from
 visual mode using the *:* key!):
 
-`:> afvn local_10_6 input_size`
+```
+:> afvn local_10_6 input_size
+```
 
 > ***r2 tip***: The *af* command family is used to analyze functions. This
 > includes manipulating arguments and local variables too, which is accessible
@@ -334,7 +312,9 @@ After this an *input_size* bytes long memory chunk is allocated, and filled with
 data from the standard input. The address of this memory chunk is stored in
 *local_10* - time to use *afvn* again:
 
-`:> afvn local_10 input_data`
+```
+:> afvn local_10 input_data
+```
 
 We've almost finished with this block, there are only two things remained.
 First, an 512 (0x200) bytes memory chunk is zeroed out at offset 0x00602120.
@@ -351,7 +331,9 @@ d 0x400a51 mov qword [rbp - 8], 0x602120
 
 Since it probably will be important later on, we should label it:
 
-`:> f sym.memory 0x200 0x602120`
+```
+:> f sym.memory 0x200 0x602120
+```
 
 > ***r2 tip***: Flags can be managed using the *f* command family. We've just
 > added the flag sym.memory to a 0x200 bytes long memory area at 0x602120. It is
@@ -361,7 +343,9 @@ Since it probably will be important later on, we should label it:
 While we are here, we should also declare that memory chunk as data, so it will
 show up as a hexdump in disassembly view:
 
-`:> Cd 0x200 @ sym.memory`
+```
+:> Cd 0x200 @ sym.memory
+```
 
 > ***r2 tip***: The command family *C* is used to manage metadata. You can set
 > (*CC*) or edit (*CC*) comments, declare memory areas as data (*Cd*), strings
@@ -373,7 +357,7 @@ input data as an argument. The function's return value is compared to "*", and
 a conditional jump is executed depending on the result.
 
 Earlier I told you that this crackme is probably based on a virtual machine.
-Well, with that information in mind, one can guess, that this function will be
+Well, with that information in mind, one can guess that this function will be
 the VM's main loop, and the input data is the instructions the VM will execute.
 Based on this hunch, I've named this function *vmloop*, and renamed
 *input_data* to *bytecode* and *input_size* to *bytecode_length*. This is not
@@ -386,7 +370,7 @@ stuff according to their purpose (just like when you are writing programs).
 :> afvn input_data bytecode
 ```
 
-> ***r2 tip***: The *af* command is used to analyze function with a given named
+> ***r2 tip***: The *af* command is used to analyze a function with a given name
 > at the given address. The other two commands should be familiar from earlier.
 
 After renaming local variables, flagging that memory area, and renaming the VM
@@ -411,27 +395,31 @@ string when executed. As we can see on the minimap, there are still a few more
 branches ahead, which probably means more conditions to meet. Lets investigate
 them before we delve into *vmloop*!
 
-If you take a look at the minimap, you can probably recognize that there is some
-kind of loop starting at block *[_0d34_]*, and it involves the following nodes:
+If you take a look at the minimap of the whole function, you can probably
+recognize that there is some kind of loop starting at block *[_0d34_]*, and it
+involves the following nodes:
 
 - [_0d34_]
 - [_0d65_]
 - [_0d3d_]
 - [_0d61_]
 
-Here are the assembly listings for those blocks:
+Here are the assembly listings for those blocks. The first one puts 0 into local
+variable *local_10_4*:
 
 ![main bb-0d34](img/main/bb-0d34.png)
 
-Putting 0 into local variable *local_10_4*.
+And this one compares *local_10_4* to 8, and executing a conditional jump based
+on the result:
 
 ![main bb-0d65](img/main/bb-0d65.png)
 
-Comparing *local_10_4* to 8, and executing a conditional jump based on the
-result. It's pretty obvious that *local_10_4* is the loop counter, so lets name
-it accordingly:
+It's pretty obvious that *local_10_4* is the loop counter, so lets name it
+accordingly:
 
-`:> afvn local_10_4 i`
+```
+:> afvn local_10_4 i
+```
 
 Next block is the actual loop body:
 
@@ -447,12 +435,14 @@ If the value is zero, the loop breaks and this block is executed before exiting:
 
 ![main bb-0d4d](img/main/bb-0d4d.png)
 
-It prints the followin message: Use everything!" As we've established earlier,
+It prints the following message: Use everything!" As we've established earlier,
 we are dealing with a virtual machine. In that context, this message probably
 means that we have to use every available instructions. Whether we executed an
 instruction or not is stored at 0x6020e0 - so lets flag that memory area:
 
-`:> f sym.instr_dirty 4*9 0x6020e0`
+```
+:> f sym.instr_dirty 4*9 0x6020e0
+```
 
 Assuming we don't break out and the loop completes, we are moving on to some
 more checks:
@@ -465,10 +455,12 @@ where offsets are described as displacements from the current instruction
 pointer, which makes implementing PIE easier. Anyways, r2 is nice enough to
 display the actual address (0x602104). Got the address, flag it!
 
-`:> f sym.good_if_ne_zero 4 0x602104`
+```
+:> f sym.good_if_ne_zero 4 0x602104
+```
 
 Keep in mind though, that if RIP-relative addressing is used, flags won't appear
-directly in the disassembly, but r2 displayes them as comments:
+directly in the disassembly, but r2 displays them as comments:
 
 ![main bb-0d6b_meta](img/main/bb-0d6b_meta.png)
 
@@ -485,7 +477,9 @@ if it's lesser, or equal to 9, we finally reach our destination, and get the fla
 
 As usual, we should flag 0x6020f0:
 
-`:> f sym.good_if_le_9 4 0x6020f0`
+```
+:> f sym.good_if_le_9 4 0x6020f0
+```
 
 Well, it seems that we have fully reversed the main function. To summarize it:
 the program reads a bytecode from the standard input, and feeds it to a virtual
@@ -505,7 +499,9 @@ itself.
 .vmloop
 -------
 
-`[offset]> fcn.vmloop`
+```
+[offset]> fcn.vmloop
+```
 
 ![vmloop bb-0a45](img/vmloop/bb-0a45.png)
 
@@ -514,8 +510,8 @@ reverse yet. The thing is that this function uses a jump table at 0x00400a74,
 
 ![vmloop bb-0a74](img/vmloop/bb-0a74.png)
 
-and r2 can't yet recognize jump tables (
-[Issue 3201](https://github.com/radare/radare2/issues/3201)), so the analysis of
+and r2 can't yet recognize jump tables
+([Issue 3201](https://github.com/radare/radare2/issues/3201)), so the analysis of
 this function is a bit incomplete. This means that we can't really use the graph
 view now, so either we just use visual mode, or fix those basic blocks. The
 entire function is just 542 bytes long, so we certainly could reverse it without
@@ -528,12 +524,16 @@ first function argument (as you may have recognized, the automatoc analysis of
 arguments and local variables was not entirely correct), and we also know that
 *vmloop*'s first argument is the bytecode. So lets rename local_3:
 
-`:> afvn local_3 bytecode`
+```
+:> afvn local_3 bytecode
+```
 
 Next, *sym.memory* is put into another local variable at *rbp-8* that r2 did not
 recognize. So let's define it!
 
-`:> afv 8 memory qword`
+```
+:> afv 8 memory qword
+```
 
 > ***r2 tip***: The *afv [idx] [name] [type]* command is used to define local
 > variable at [frame pointer - idx] with the name [name] and type [type]. You
@@ -602,22 +602,18 @@ This is how the disassembly looks like after we add this metadata:
 As we can see, the address 0x400c04 is used a lot, and besides that there are 9
 different addresses. Lets see that 0x400c04 first!
 
-```
-[0x00400ec0]> pd 4 @ 0x400c04
-|           0x00400c04    bf980e4000     mov edi, str.Wrong_ ; "Wrong!" @ 0x400e98
-|           0x00400c09    e862faffff     call sym.imp.puts
-|           0x00400c0e    b800000000     mov eax, 0
-|           0x00400c13    eb4c           jmp 0x400c61
-```
+![vmloop bb-0c04](img/vmloop/bb-0c04.png)
 
 We get the message "Wrong!", and the function just returns 0. This means that
 those are not valid instructions (they are valid bytecode though, they can be
 e.g. parameters!) We should flag 0x400c04 accordingly:
 
-`[0x00400ec0]> f not_instr @ 0x0000000000400c04`
+```
+[0x00400ec0]> f not_instr @ 0x0000000000400c04
+```
 
 As for the other offsets, they all seem to be doing something meaningful, so we
-can assume they belong to valid instructions. I'm goind to flag them using the
+can assume they belong to valid instructions. I'm going to flag them using the
 instructions' ASCII values:
 
 ```
@@ -644,157 +640,11 @@ for them!
 We can get the start and end addresses of these basic blocks from the full disasm
 of *vmloop*.
 
-```
-[0x00400ec0]>pdf @ fcn.vmloop
-/ (fcn) fcn.00400a45 542
-|           ; arg int arg_787492   @ rbp+0x602120
-|           ; var int local_0_1    @ rbp-0x1
-|           ; var qword memory       @ rbp-0x8
-|           ; var int bytecode     @ rbp-0x18
-|           ;-- fcn.vmloop:
-|           0x00400a45    55             push rbp
-|           0x00400a46    4889e5         mov rbp, rsp
-|           0x00400a49    4883ec20       sub rsp, 0x20
-|           0x00400a4d    48897de8       mov qword [rbp-bytecode], rdi
-|           0x00400a51    48c745f82021.  mov qword [rbp-memory], sym.memory
-|       ,=< 0x00400a59    e9ef010000     jmp 0x400c4d
-|       |   0x00400a5e    488b45e8       mov rax, qword [rbp-bytecode]
-|       |   0x00400a62    0fb600         movzx eax, byte [rax]
-|       |   0x00400a65    0fbec0         movsx eax, al
-|       |   0x00400a68    83e841         sub eax, 0x41
-|       |   0x00400a6b    83f817         cmp eax, 0x17
-|      ,==< 0x00400a6e    0f8790010000   ja 0x400c04
-|      ||   0x00400a74    89c0           mov eax, eax
-|      ||   0x00400a76    488b04c5c00e.  mov rax, qword [raxi*8 + 0x400ec0]
-|      ||   0x00400a7e    ffe0           jmp rax
-|      ||   ;-- instr_A:
-|      ||   0x00400a80    8b055a162000   mov eax, dword [rip + 0x20165a]
-|      ||   0x00400a86    83c001         add eax, 1
-|      ||   0x00400a89    890551162000   mov dword [rip + 0x201651], eax
-|      ||   0x00400a8f    488b45e8       mov rax, qword [rbp-bytecode]
-|      ||   0x00400a93    488d5002       lea rdx, [rax + 2]
-|      ||   0x00400a97    488b45e8       mov rax, qword [rbp-bytecode]
-|      ||   0x00400a9b    4883c001       add rax, 1
-|      ||   0x00400a9f    4889d6         mov rsi, rdx
-|      ||   0x00400aa2    4889c7         mov rdi, rax
-|      ||   0x00400aa5    e863fdffff     call 0x40080d
-|      ||   0x00400aaa    c745f4030000.  mov dword [rbp - 0xc], 3
-|     ,===< 0x00400ab1    e95f010000     jmp 0x400c15
-|     |||   ;-- instr_S:
-|     |||   0x00400ab6    8b0528162000   mov eax, dword [rip + 0x201628]
-|     |||   0x00400abc    83c001         add eax, 1
-|     |||   0x00400abf    89051f162000   mov dword [rip + 0x20161f], eax
-|     |||   0x00400ac5    488b45e8       mov rax, qword [rbp-bytecode]
-|     |||   0x00400ac9    488d5002       lea rdx, [rax + 2]
-|     |||   0x00400acd    488b45e8       mov rax, qword [rbp-bytecode]
-|     |||   0x00400ad1    4883c001       add rax, 1
-|     |||   0x00400ad5    4889d6         mov rsi, rdx
-|     |||   0x00400ad8    4889c7         mov rdi, rax
-|     |||   0x00400adb    e8bffdffff     call 0x40089f
-|     |||   0x00400ae0    c745f4030000.  mov dword [rbp - 0xc], 3
-|    ,====< 0x00400ae7    e929010000     jmp 0x400c15
-|    ||||   ;-- instr_I:
-|    ||||   0x00400aec    8b05f6152000   mov eax, dword [rip + 0x2015f6]
-|    ||||   0x00400af2    83c001         add eax, 1
-|    ||||   0x00400af5    8905ed152000   mov dword [rip + 0x2015ed], eax
-|    ||||   0x00400afb    488b45e8       mov rax, qword [rbp-bytecode]
-|    ||||   0x00400aff    4883c001       add rax, 1
-|    ||||   0x00400b03    4889c7         mov rdi, rax
-|    ||||   0x00400b06    e856feffff     call 0x400961
-|    ||||   0x00400b0b    c745f4020000.  mov dword [rbp - 0xc], 2
-|   ,=====< 0x00400b12    e9fe000000     jmp 0x400c15
-|   |||||   ;-- instr_D:
-|   |||||   0x00400b17    8b05cf152000   mov eax, dword [rip + 0x2015cf]
-|   |||||   0x00400b1d    83c001         add eax, 1
-|   |||||   0x00400b20    8905c6152000   mov dword [rip + 0x2015c6], eax
-|   |||||   0x00400b26    488b45e8       mov rax, qword [rbp-bytecode]
-|   |||||   0x00400b2a    4883c001       add rax, 1
-|   |||||   0x00400b2e    4889c7         mov rdi, rax
-|   |||||   0x00400b31    e806feffff     call 0x40093c
-|   |||||   0x00400b36    c745f4020000.  mov dword [rbp - 0xc], 2
-|  ,======< 0x00400b3d    e9d3000000     jmp 0x400c15
-|  ||||||   ;-- instr_P:
-|  ||||||   0x00400b42    8b05a8152000   mov eax, dword [rip + 0x2015a8]
-|  ||||||   0x00400b48    83c001         add eax, 1
-|  ||||||   0x00400b4b    89059f152000   mov dword [rip + 0x20159f], eax
-|  ||||||   0x00400b51    488b45e8       mov rax, qword [rbp-bytecode]
-|  ||||||   0x00400b55    4883c001       add rax, 1
-|  ||||||   0x00400b59    4889c7         mov rdi, rax
-|  ||||||   0x00400b5c    e825feffff     call 0x400986
-|  ||||||   0x00400b61    c745f4020000.  mov dword [rbp - 0xc], 2
-| ,=======< 0x00400b68    e9a8000000     jmp 0x400c15
-| |||||||   ;-- instr_C:
-| |||||||   0x00400b6d    8b0581152000   mov eax, dword [rip + 0x201581]
-| |||||||   0x00400b73    83c001         add eax, 1
-| |||||||   0x00400b76    890578152000   mov dword [rip + 0x201578], eax
-| |||||||   0x00400b7c    488b45e8       mov rax, qword [rbp-bytecode]
-| |||||||   0x00400b80    4883c001       add rax, 1
-| |||||||   0x00400b84    0fb600         movzx eax, byte [rax]
-| |||||||   0x00400b87    0fbec0         movsx eax, al
-| |||||||   0x00400b8a    890530152000   mov dword [rip + 0x201530], eax
-| |||||||   0x00400b90    c745f4020000.  mov dword [rbp - 0xc], 2
-| ========< 0x00400b97    eb7c           jmp 0x400c15
-| |||||||   ;-- instr_X:
-| |||||||   0x00400b99    8b0559152000   mov eax, dword [rip + 0x201559]
-| |||||||   0x00400b9f    83c001         add eax, 1
-| |||||||   0x00400ba2    890550152000   mov dword [rip + 0x201550], eax
-| |||||||   0x00400ba8    488b45e8       mov rax, qword [rbp-bytecode]
-| |||||||   0x00400bac    4883c001       add rax, 1
-| |||||||   0x00400bb0    4889c7         mov rdi, rax
-| |||||||   0x00400bb3    e867feffff     call 0x400a1f
-| |||||||   0x00400bb8    c745f4020000.  mov dword [rbp - 0xc], 2
-| ========< 0x00400bbf    eb54           jmp 0x400c15
-| |||||||   ;-- instr_J:
-| |||||||   0x00400bc1    8b0535152000   mov eax, dword [rip + 0x201535]
-| |||||||   0x00400bc7    83c001         add eax, 1
-| |||||||   0x00400bca    89052c152000   mov dword [rip + 0x20152c], eax
-| |||||||   0x00400bd0    488b45e8       mov rax, qword [rbp-bytecode]
-| |||||||   0x00400bd4    4883c001       add rax, 1
-| |||||||   0x00400bd8    4889c7         mov rdi, rax
-| |||||||   0x00400bdb    e8d8fdffff     call 0x4009b8
-| |||||||   0x00400be0    8945f4         mov dword [rbp - 0xc], eax
-| ========< 0x00400be3    eb30           jmp 0x400c15
-| |||||||   ;-- instr_R:
-| |||||||   0x00400be5    8b0515152000   mov eax, dword [rip + 0x201515]
-| |||||||   0x00400beb    83c001         add eax, 1
-| |||||||   0x00400bee    89050c152000   mov dword [rip + 0x20150c], eax
-| |||||||   0x00400bf4    488b45e8       mov rax, qword [rbp-bytecode]
-| |||||||   0x00400bf8    4883c001       add rax, 1
-| |||||||   0x00400bfc    0fb600         movzx eax, byte [rax]
-| |||||||   0x00400bff    0fbec0         movsx eax, al
-| ========< 0x00400c02    eb5d           jmp 0x400c61
-| ||||||    ;-- not_instr:
-| |||||`--> 0x00400c04    bf980e4000     mov edi, str.Wrong_
-| ||||| |   0x00400c09    e862faffff     call sym.imp.puts
-| ||||| |   0x00400c0e    b800000000     mov eax, 0
-| ========< 0x00400c13    eb4c           jmp 0x400c61
-| `````---> 0x00400c15    8b45f4         mov eax, dword [rbp - 0xc]
-|       |   0x00400c18    4898           cdqe
-|       |   0x00400c1a    480145e8       add qword [rbp-bytecode], rax
-|       |   0x00400c1e    488b05631420.  mov rax, qword [rip + 0x201463]
-|       |   0x00400c25    483d20216000   cmp rax, sym.memory
-| ========< 0x00400c2b    720f           jb 0x400c3c
-|       |   0x00400c2d    488b05541420.  mov rax, qword [rip + 0x201454]
-|       |   0x00400c34    483d20236000   cmp rax, section_end..bss
-| ========< 0x00400c3a    7211           jb 0x400c4d
-| --------> 0x00400c3c    bf9f0e4000     mov edi, str.We_are_in_the_outer_space\_
-|       |   0x00400c41    e82afaffff     call sym.imp.puts
-|       |   0x00400c46    b800000000     mov eax, 0
-| ========< 0x00400c4b    eb14           jmp 0x400c61
-| ------`-> 0x00400c4d    488b45e8       mov rax, qword [rbp-bytecode]
-|           0x00400c51    0fb600         movzx eax, byte [rax]
-|           0x00400c54    84c0           test al, al
-|           0x00400c56    0f8502feffff   jne 0x400a5e
-|           0x00400c5c    b801000000     mov eax, 1
-| --------> 0x00400c61    c9             leave
-\           0x00400c62    c3             ret
-
-```
+![vmloop full](img/vmloop/vmloop-full.png)
 
 As I've mentioned previously, the function itself is pretty short, and easy to
-read, especially with out annotations. But a promise is a promise, so here is
+read, especially with our annotations. But a promise is a promise, so here is
 how we can create the missing bacic blocks for the instructions:
-
 
 ```
 [0x00400ec0]> afb+ 0x00400a45 0x00400a80 0x00400ab6-0x00400a80 0x400c15
@@ -808,7 +658,7 @@ how we can create the missing bacic blocks for the instructions:
 [0x00400ec0]> afb+ 0x00400a45 0x00400be5 0x00400c04-0x00400be5 0x400c15
 ```
 
-It is also appearent from the disassembly that besides the instructions there
+It is also apparent from the disassembly that besides the instructions there
 are three more basic blocks. Lets create them too!
 
 ```
@@ -824,89 +674,48 @@ And here is the graph in its full glory after a bit of manual restructuring:
 
 ![vmloop graph](img/vmloop/vmloop-graph-reconstructed_full.png)
 
-I think it worth it, don't you? :) (Well, the reorganizing did really not worth
+I think it worth it, don't you? :) (Well, the restructuring did not really worth
 it, because it is apparently not stored when you save the project.)
 
 > ***r2 tip***: You can move the selected node around in graph view using the
 > HJKL keys. The *?* documentation needs to be fixed on this part though: the
 > move node (HJKL) and the move canvas (hjkl) keys are swapped there.
 
+BTW, here is how IDA's graph of this same function looks like for comparison:
+
+![IDA graph](img/vmloop_ida.png)
+
 As we browse through the disassembly of the *instr_LETTER* basic blocks, we
-should realize a few things. The first: ll of the instructions starts with a
+should realize a few things. The first: all of the instructions starts with a
 sequence like these:
 
-```
-0x400a80:
-instr_A:
-mov eax, dword [rip + 0x20165a] ; [0x6020e0:4]=0x646c6975  LEA sym.instr_dirty
-add eax, 1
-mov dword [rip + 0x201651], eax ; [0x6020e0:4]=0x646c6975  LEA sym.instr_dirty
-```
+![vmloop bb-0a80](img/vmloop/bb-0a80.png)
 
-```
-0x400ab6:
-instr_S:
-mov eax, dword [rip + 0x201628] ; [0x6020e4:4]=0x64692d  ; "-id" @ 0x6020e4
-add eax, 1
-mov dword [rip + 0x20161f], eax ; [0x6020e4:4]=0x64692d  ; "-id" @ 0x6020e4
-```
+![vmloop bb-0ab6](img/vmloop/bb-0ab6.png)
 
 It became clear now that the 9 dwords at *sym.instr_dirty* are not simply
 indicators that an instruction got executed, but they are used to count how many
 times an instruction got called. Also I should have realized earlier that
 *sym.good_if_le_9* (0x6020f0) is part of this 9 dword array, but yeah, well, I
-didn't. Anyways, what the condition *sym.good_if_le_9* have to be lesser or
-equal 9 really means is that *instr_P* can not be executed more than 9 times.
+didn't, I have to live with it... Anyways, what the condition
+"*sym.good_if_le_9* have to be lesser or equal 9" really means is that *instr_P*
+can not be executed more than 9 times:
 
-```
-0x400b42:
-instr_P:
-mov eax, dword [rip + 0x2015a8] ; [0x6020f0:4]=0x642e0068  LEA sym.good_if_le_9
-add eax, 1
-mov dword [rip + 0x20159f], eax ; [0x6020f0:4]=0x642e0068  LEA sym.good_if_le_9
-```
+![vmloop bb-0b42](img/vmloop/bb-0b42.png)
 
 Another similarity of the instructions is that 7 of them calls a function with
 either one or two parameters, where the parameters are the next, or the next two
 bytecodes. One parameter example:
 
-```
-0x400aec:
-instr_I:
-mov eax, dword [rip + 0x2015f6] ; [0x6020e8:4]=0x756e672e
-add eax, 1
-mov dword [rip + 0x2015ed], eax ; [0x6020e8:4]=0x756e672e
-mov rax, qword [rbp-bytecode]
-add rax, 1
-mov rdi, rax
-call 0x400961 ;[i]
-mov dword [rbp - 0xc], 2
-jmp 0x400c15 ;[d]
-
-```
+![vmloop bb-0aec](img/vmloop/bb-0aec.png)
 
 And a two parameters example:
 
-```
-0x400a80:
-instr_A:
-mov eax, dword [rip + 0x20165a] ; [0x6020e0:4]=0x646c6975  LEA sym.instr_dirty
-add eax, 1
-mov dword [rip + 0x201651], eax ; [0x6020e0:4]=0x646c6975  LEA sym.instr_dirty
-mov rax, qword [rbp-bytecode]
-lea rdx, [rax + 2] ; 0x2
-mov rax, qword [rbp-bytecode]
-add rax, 1
-mov rsi, rdx
-mov rdi, rax
-call 0x40080d ;[c]
-mov dword [rbp - 0xc], 3
-jmp 0x400c15 ;[d]
-```
+![vmloop bb-0a80_full](img/vmloop/bb-0a80_full.png)
 
 We should also realize that these blocks put the number of bytes they eat up of
-the bytecode (1 byte instruction + 1 or 2 bytes arguments) into a local variable
-at 0xc. r2 did not recognize this local var, so lets do it manually!
+the bytecode (1 byte instruction + 1 or 2 bytes arguments = 2 or 3) into a local
+variable at 0xc. r2 did not recognize this local var, so lets do it manually!
 
 ```
 :> afv 0xc instr_ptr_step dword
@@ -916,56 +725,20 @@ If we look at *instr_J* we can see that this is an exception to the above rule,
 since it puts the return value of the called function into *instr_ptr_step*
 instead of a constant 2 or 3:
 
-```
-0x400bc1:
-instr_J:
-mov eax, dword [rip + 0x201535] ; [0x6020fc:4]=0x74736e79  ; "ynstr" @ 0x6020fc
-add eax, 1
-mov dword [rip + 0x20152c], eax ; [0x6020fc:4]=0x74736e79  ; "ynstr" @ 0x6020fc
-mov rax, qword [rbp-bytecode]
-add rax, 1
-mov rdi, rax
-call 0x4009b8 ;[m]
-mov dword [rbp-instr_ptr_step], eax
-jmp 0x400c15 ;[d]
-```
+![vmloop bb-0bc1](img/vmloop/bb-0bc1.png)
 
 And speaking of exceptions, here are the two instructions that do not call functions:
 
-```
-0x400be5:
-instr_R:
-mov eax, dword [rip + 0x201515] ; [0x602100:4]=0x672e0072  ; "r" 0x00602100  ; "r" @ 0x602100
-add eax, 1
-mov dword [rip + 0x20150c], eax ; [0x602100:4]=0x672e0072  ; "r" 0x00602100  ; "r" @ 0x602100
-mov rax, qword [rbp-bytecode]
-add rax, 1
-movzx eax, byte [rax]
-movsx eax, al
-jmp 0x400c61 ;[f]
-```
+![vmloop bb-0be5](img/vmloop/bb-0be5.png)
 
 This one simply puts the next bytecode (the first the argument) into *eax*, and
 jumps to the end of *vmloop*. So this is the VM's *ret* instruction, and we know
-that *vmloop* has to return "*", so "R*" should be the last two bytes of our
+that *vmloop* has to return "\*", so "R\*" should be the last two bytes of our
 bytecode.
 
 The next one that does not call a function:
 
-```
-0x400b6d:
-instr_C:
-mov eax, dword [rip + 0x201581] ; [0x6020f4:4]=0x79736e79  ; "ynsym" @ 0x6020f4
-add eax, 1
-mov dword [rip + 0x201578], eax ; [0x6020f4:4]=0x79736e79  ; "ynsym" @ 0x6020f4
-mov rax, qword [rbp-bytecode]
-add rax, 1
-movzx eax, byte [rax]
-movsx eax, al
-mov dword [rip + 0x201530], eax ; [0x6020c0:4]=0x65746e69  ; "interp" @ 0x6020c0
-mov dword [rbp-instr_ptr_step], 2
-jmp 0x400c15 ;[d]
-```
+![vmloop bb-0b6d](img/vmloop/bb-0b6d.png)
 
 This is a one argument instruction, and it puts its argument to 0x6020c0. Flag
 that address!
@@ -979,7 +752,7 @@ the original code, but it got inlined by the compiler. Anyways, so far we have
 these two instructions:
 
 - *instr_R(a1):* returns with *a1*
-- *instr_C(a1):* writes *a1* to sym.written_by_instr_C
+- *instr_C(a1):* writes *a1* to *sym.written_by_instr_C*
 
 And we also know that these accept one argument,
 
@@ -1013,8 +786,8 @@ If we seek to that address from the graph mode, we are presented with a message
 that says "Not in a function. Type 'df' to define it here. This is because the
 function is called from a basic block r2 did not recognize, so r2 could not
 find the function either. Lets obey, and type *df*! A function is indeed created,
-but want some meaningful name for it. So press *dr* while still in visual mode, and
-name this function *instr_A*!
+but we want some meaningful name for it. So press *dr* while still in visual mode,
+and name this function *instr_A*!
 
 ![instr_A minimap](img/instr_A/instr_A_minimap.png)
 
@@ -1077,8 +850,8 @@ Finally, the "C" branch:
 
 ![instr_A switch-C](img/instr_A/switch-C.png)
 
-Well, it turned out that *sym.written_by_instr_C* is not written only by
-*instr_C*, but by *instr_A* too: this piece of code adds *arg2* to it.
+Well, it turned out that *instr_C* is not the only instruction that modifies 
+*sym.written_by_instr_C*: this piece of code adds *arg2* to it.
 
 And that was *instr_A*, lets summarize it! Depending on the first argument, this
 instruction does the following:
@@ -1108,22 +881,23 @@ graphs for comparing *instr_A* to *instr_S* and for comparing *instr_S* to
 ```
 [0x00 ~]$ radiff2 -g 0x40080d,0x40089f  reverse4 reverse4 | xdot -
 ```
+![instr_S graph1](img/instr_S/graph1.png)
 
 ```
 [0x00 ~]$ radiff2 -g 0x40089f,0x40080d  reverse4 reverse4 | xdot -
 ```
-
-![instr_S graph1](img/instr_S/graph1.png)
-
 ![instr_S graph2](img/instr_S/graph2.png)
 
-Two things should be obvious from these pictures: the first is that radiff2 is a
+A sad truth reveals itself after a quick glance at these graphs: radiff2 is a
 liar! In theory, grey boxes should be identical, yellow ones should differ only
 at some offsets, and red ones should differ seriously. Well this is obviously
-not the case here - e.g. the larger grey boxes at clearly not identical (this is
-something I'm going to take a deeper look at after I've finished this writeup).
-The second obvious thing is that *instr_S* is basically a reverse-*instr_A*:
-where the latter does addition, the former does subtraction. To summarize this:
+not the case here - e.g. the larger grey boxes are clearly not identical. This
+is something I'm definitely going to take a deeper look at after I've finished
+this writeup.
+
+Anyways, after we get over the shock of being lied to, we can easily recognize
+that *instr_S* is basically a reverse-*instr_A*: where the latter does addition,
+the former does subtraction. To summarize this:
 
 - *arg1* == "M": subtracts *arg2* from the byte at *sym.current_memory_ptr*.
 - *arg1* == "P": steps *sym.current_memory_ptr* backwards by *arg2* bytes.
@@ -1230,7 +1004,7 @@ how it works. Here is the VM's instruction set:
 | Instruction | 1st arg | 2nd arg | What it does?
 | ----------- | ------- | ------- | -------------
 | "A"         | "M"     | arg2    | \*sym.current_memory_ptr += arg2
-|             | "P"     | arg2    | sym.current_memory_}ptr += arg2
+|             | "P"     | arg2    | sym.current_memory_ptr += arg2
 |             | "C"     | arg2    | sym.written_by_instr_C += arg2
 | "S"         | "M"     | arg2    | \*sym.current_memory_ptr -= arg2
 |             | "P"     | arg2    | sym.current_memory_ptr -= arg2
@@ -1239,7 +1013,7 @@ how it works. Here is the VM's instruction set:
 | "D"         | arg1    | n/a     | instr_S(arg1, 1)
 | "P"         | arg1    | n/a     | \*sym.current_memory_ptr = arg1; instr_I("P")
 | "X"         | arg1    | n/a     | \*sym.current_memory_ptr ^= arg1
-| "J"         | arg1    | n/a     | arg1_and_0x3f = arg1 & 0x3f;<br>if (arg1 & 0x40 != 0)<br>&nbsp;&nbsp;arg1_and_0x3f \*= -1<br>if (arg1 >= 0) return arg1 & 0x3f;<br>else if (\*sym.written_by_instr_C != 0) {<br>&nbsp;&nbsp;if (arg1 & 0x3f < 0)<br>&nbsp;&nbsp;&nbsp;&nbsp;++\*sym.good_if_ne_zero;<br>&nbsp;&nbsp;return arg1 & 0x3f;<br>} else return 2; |
+| "J"         | arg1    | n/a     | arg1_and_0x3f = arg1 & 0x3f;<br>if (arg1 & 0x40 != 0)<br>&nbsp;&nbsp;arg1_and_0x3f \*= -1<br>if (arg1 >= 0) return arg1_and_0x3f;<br>else if (\*sym.written_by_instr_C != 0) {<br>&nbsp;&nbsp;if (arg1_and_0x3f < 0)<br>&nbsp;&nbsp;&nbsp;&nbsp;++\*sym.good_if_ne_zero;<br>&nbsp;&nbsp;return arg1_and_0x3f;<br>} else return 2; |
 | "C"         | arg1 | n/a        | \*sym.written_by_instr_C = arg1
 | "R"         | arg1 | n/a        | return(arg1)
 
@@ -1259,16 +1033,34 @@ the program's functional specification:
 
 Since this document is about reversing and not about programming, I'll leave the
 programming part to the fellow reader :) But I'm not going to leave you
-empty-handed, here is the quick'n'dirty program I've used during the CTF:
+empty-handed, I'll give you one advice: Except for "J", all of the instructions
+are simple, easy to use, and it should not be a problem to construct the 
+"Such VM! MuCH reV3rse!" using them. "J" however is a bit complicated compared
+to the others. One should realize that its sole purpose is to make
+*sym.good_if_ne_zero* bigger than zero, which is a requirement to access the
+flag. In order to increment *sym.good_if_ne_zero*, two conditions should be met:
+
+- *arg1* should be a negative number, otherwise we would return early
+- *sym.written_by_instr_C* should not be 0, when "J" is called. This means that
+  "C", "AC", or "SC" instructions should be used before calling "J".
+- *arg1_and_0x3f* should be negative when checked. Since 0x3f's sign bit is
+  zero, no matter what *arg1* is, the result of *arg1* & 0x3f will always be
+  non-negative. But remember that "J" negates *arg1_and_0x3f* if *arg1* & 0x40
+  is not zero. This basically means that *arg1*'s 6th bit should be 1
+  (0x40 = 01000000b). Also, because *arg1_and_0x3f* can't be 0 either, at least
+  one of *arg1*'s 0th, 1st, 2nd, 3rd, 4th or 5th bits should be 1 (0x3f =
+  00111111b).
+
+I think this is enough information, you can go now and write that program. Or,
+you could just reverse engineer the quick'n'dirty one I've used during the CTF:
 
 ```
 \x90\x00PSAMuAP\x01AMcAP\x01AMhAP\x01AM AP\x01AMVAP\x01AMMAP\x01AM!AP\x01AM AP\x01AMMAP\x01AMuAP\x01AMCAP\x01AMHAP\x01AM AP\x01AMrAP\x01AMeAP\x01AMVAP\x01AM3AP\x01AMrAP\x01AMsAP\x01AMeIPAM!X\x00CAJ\xc1SC\x00DCR*
 ```
 
-Maybe you should try to reverse it ;) Keep in mind please, that it was written
-on-the-fly, parallel to the reversing phase - for example there are parts that
-was written without the knowledge of all possible instructions. This means that
-the code is ugly and unefficient.
+Keep in mind though, that it was written on-the-fly, parallel to the reversing
+phase - for example there are parts that was written without the knowledge of
+all possible instructions. This means that the code is ugly and unefficient.
 
 .outro
 ------
