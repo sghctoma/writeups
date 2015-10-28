@@ -1,0 +1,7 @@
+[0x004009b8]> VV @ fcn.004009b8 (nodes 10 edges 13 zoom 100%) BB mouse:canvas-y movements-speed
+                                       |           |               |
+0x4009f9:                              |           |               |
+cmp dword [rbp-arg1_and_0x3f], 0       |        [_0a13_]      <@@@@@@>
+jns 0x400a0e ;[e]                      |         v               t f
+                                       |     .---'         .-------'
+                                       |     |             |     |

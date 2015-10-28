@@ -1,0 +1,11 @@
+[0x00400a45]> VV @ fcn.00400a45 (nodes 7 edges 7 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                                     |
+0x400a5e:                                            |
+mov rax, qword [rbp-bytecode]                       [_0c4d_]
+movzx eax, byte [rax]                                  t f
+movsx eax, al                                  .-------' '--------.
+sub eax, 0x41                                  |                  |
+cmp eax, 0x17                                  |                  |
+ja 0x400c04 ;[b]                            <@@@@@@>         [_0c5c_]
+                                                 f t          v
+                                          .------' '--.       |

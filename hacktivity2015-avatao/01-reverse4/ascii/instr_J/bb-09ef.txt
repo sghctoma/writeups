@@ -1,0 +1,12 @@
+[0x004009b8]> VV @ fcn.004009b8 (nodes 10 edges 13 zoom 100%) BB mouse:canvas-y movements-speed
+                                               |     |
+0x4009ef:                                      |     |
+mov eax, dword [rip + 0x2016cb] ; [0x6020c0:4]=0x65746e69  LEA sym.written_by_instr_C ; "interp
+test eax, eax                                    t f
+je 0x400a13 ;[c]                         .-------' '--------.
+                                         |                  |
+                                         |                  |
+                                      [_0a1a_]         <@@@@@@>
+                                       v                  t f
+                                       |           .------' '------.
+                                       |           |               |

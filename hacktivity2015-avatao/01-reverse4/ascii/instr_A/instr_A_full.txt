@@ -1,0 +1,52 @@
+[0x0040080d 19% 260 /usr/home/sghctoma/shared/avatao/reverse4]> pd $r @ fcn.instr_A
+/ (fcn) fcn.0040080d 146
+|           ; var int local_0      @ rbp-0x0
+|           ; var int local_0_1    @ rbp-0x1
+|           ; var int local_1      @ rbp-0x8
+|           ; var int local_2      @ rbp-0x10
+|           ; CALL XREF from 0x0040097f (fcn.0040080d)
+|           ;-- fcn.instr_A:
+|           0x0040080d    55             push rbp
+|           0x0040080e    4889e5         mov rbp, rsp
+|           0x00400811    48897df8       mov qword [rbp-local_1], rdi
+|           0x00400815    488975f0       mov qword [rbp-local_2], rsi
+|           0x00400819    48837df800     cmp qword [rbp-local_1], 0
+|       ,=< 0x0040081e    747d           je 0x40089d ;[1]
+|       |   0x00400820    48837df000     cmp qword [rbp-local_2], 0
+|      ,==< 0x00400825    7476           je 0x40089d ;[1]
+|      ||   0x00400827    488b45f8       mov rax, qword [rbp-local_1]
+|      ||   0x0040082b    0fb600         movzx eax, byte [rax]
+|      ||   0x0040082e    3c4d           cmp al, 0x4d ; 'M'
+|     ,===< 0x00400830    7520           jne 0x400852 ;[2]
+|     |||   0x00400832    488b054f1820.  mov rax, qword [rip + 0x20184f] ; [0x602088:8]=0x602120
+|     |||   0x00400839    488b15481820.  mov rdx, qword [rip + 0x201848] ; [0x602088:8]=0x602120
+|     |||   0x00400840    0fb612         movzx edx, byte [rdx]
+|     |||   0x00400843    89d1           mov ecx, edx
+|     |||   0x00400845    488b55f0       mov rdx, qword [rbp-local_2]
+|     |||   0x00400849    0fb612         movzx edx, byte [rdx]
+|     |||   0x0040084c    01ca           add edx, ecx
+|     |||   0x0040084e    8810           mov byte [rax], dl
+|    ,====< 0x00400850    eb4b           jmp 0x40089d ;[1]
+|    |`---> 0x00400852    488b45f8       mov rax, qword [rbp-local_1]
+|    | ||   0x00400856    0fb600         movzx eax, byte [rax]
+|    | ||   0x00400859    3c50           cmp al, 0x50 ; 'P'
+|   ,=====< 0x0040085b    751d           jne 0x40087a ;[3]
+|   || ||   0x0040085d    488b15241820.  mov rdx, qword [rip + 0x201824] ; [0x602088:8]=0x602120
+|   || ||   0x00400864    488b45f0       mov rax, qword [rbp-local_2]
+|   || ||   0x00400868    0fb600         movzx eax, byte [rax]
+|   || ||   0x0040086b    0fb6c0         movzx eax, al
+|   || ||   0x0040086e    4801d0         add rax, rdx
+|   || ||   0x00400871    488905101820.  mov qword [rip + 0x201810], rax ; [0x602088:8]=0x602120
+|  ,======< 0x00400878    eb23           jmp 0x40089d ;[1]
+|  |`-----> 0x0040087a    488b45f8       mov rax, qword [rbp-local_1]
+|  | | ||   0x0040087e    0fb600         movzx eax, byte [rax]
+|  | | ||   0x00400881    3c43           cmp al, 0x43 ; 'C'
+| ,=======< 0x00400883    7518           jne 0x40089d ;[1]
+| || | ||   0x00400885    488b45f0       mov rax, qword [rbp-local_2]
+| || | ||   0x00400889    0fb600         movzx eax, byte [rax]
+| || | ||   0x0040088c    0fb6d0         movzx edx, al
+| || | ||   0x0040088f    8b052b182000   mov eax, dword [rip + 0x20182b] ; [0x6020c0:4]=0x65746e
+| || | ||   0x00400895    01d0           add eax, edx
+| || | ||   0x00400897    890523182000   mov dword [rip + 0x201823], eax ; [0x6020c0:4]=0x65746e
+| ``-`-``-> 0x0040089d    5d             pop rbp
+\           0x0040089e    c3             ret

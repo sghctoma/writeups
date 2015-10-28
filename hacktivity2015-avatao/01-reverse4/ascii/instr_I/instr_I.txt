@@ -1,0 +1,18 @@
+0x400961:
+(fcn) fcn.00400961 37
+; var int local_0_1    @ rbp-0x1
+; var int local_3      @ rbp-0x18
+; CALL XREF from 0x004009b1 (fcn.00400961)
+fcn.instr_I:
+push rbp                                       <@@@@@@>
+mov rbp, rsp
+sub rsp, 0x18
+mov qword [rbp-local_3], rdi
+mov byte [rbp-local_0_1], 1
+lea rdx, [rbp-local_0_1]
+mov rax, qword [rbp-local_3]
+mov rsi, rdx
+mov rdi, rax
+call fcn.0040080d ;[a]
+leave
+ret

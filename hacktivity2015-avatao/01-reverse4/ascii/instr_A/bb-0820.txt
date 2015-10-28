@@ -1,0 +1,7 @@
+[0x0040080d]> VV @ fcn.0040080d (nodes 9 edges 13 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                             |          |
+0x400820:                                    |          |
+cmp qword [rbp-local_2], 0              <@@@@@@>        |
+je 0x40089d ;[a]                             f t        |
+                                     .-------' '--.     |
+                                     |            |     |

@@ -1,0 +1,60 @@
+[0x00400a45]> VV @ fcn.00400a45 (nodes 19 edges 21 zoom 100%) BB mouse:canvas-y movements-speed
+
+0x400a45:
+(fcn) fcn.00400a45 542
+; arg int arg_787492   @ rbp+0x602120
+; var int local_0_1    @ rbp-0x1
+; var qword memory       @ rbp-0x8
+; var int bytecode     @ rbp-0x18
+; CALL XREF from 0x00400d0f (fcn.00400a45)
+fcn.vmloop:
+push rbp
+mov rbp, rsp
+sub rsp, 0x20
+mov qword [rbp-bytecode], rdi
+mov qword [rbp-memory], sym.memory ; [0x602120:8]=0x6e79642e616c65  LEA sym.memory ; "ela.dyn"
+jmp 0x400c4d ;[a]
+
+
+       [_0ab6_]   [_0a80_][_0aec_] [_0b17_] [_0b42_] [_0b6d_] [_0b99_] [_0bc1_]
+        v          v       v        v        v        v        v        v
+        |          |       |        |        |        |        |        |
+        |          |       |        |        |        |        |        |
+        |          |       |        |        |        |        |        |
+        |          |       |        |        |        |        |        |       [_0be5_]
+        |          |       |        |        |        |        |        |        v
+        '------------------'--------'--------'--------.-----------------'        |
+                                                      |                          |
+                                                      |                          |
+                   <@@@@@@>                           |          .---------------'
+                    v                                 |          |
+                    '------------------.              |          |
+                                       |              |          |
+                                       |              |          |
+                                       |             [_0c15_]    |
+                                       |                  f t    |
+                                       |             .----'.'    |
+                                       |             |     |     |
+                                       |             |     |     |
+                                       |        [_0c2d_]   |     |
+                                       |           t f     |     |
+                                       '-. .-------' '-----.-.   |
+                                         | |               | |   |
+                                         | |               | |   |
+                                        [_0c4d_]      [_0c3c_]   |
+                                           t f         v         |
+                                     .-----' '-------. '---.     |
+                                     |               |     |     |
+                                     |               |     |     |
+                                  [_0a5e_]      [_0c5c_]   |     |
+                                       f t       v         |     |
+                                 .-----' '---.   '---.     |     |
+                                 |           |       |     |     |
+                                 |           |       |     |     |
+                            [_0a74_]      [_0c04_]   |     |     |
+                                           v         |     |     |
+                                           '---------'-.---'-----'
+                                                       |
+                                                       |
+                                                      [_0c61_]
+

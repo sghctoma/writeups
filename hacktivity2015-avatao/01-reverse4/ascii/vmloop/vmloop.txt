@@ -1,0 +1,143 @@
+/ (fcn) fcn.00400a45 542
+|           ; arg int arg_787492   @ rbp+0x602120
+|           ; var int local_0_1    @ rbp-0x1
+|           ; var qword memory       @ rbp-0x8
+|           ; var int bytecode     @ rbp-0x18
+|           ;-- fcn.vmloop:
+|           0x00400a45    55             push rbp
+|           0x00400a46    4889e5         mov rbp, rsp
+|           0x00400a49    4883ec20       sub rsp, 0x20
+|           0x00400a4d    48897de8       mov qword [rbp-bytecode], rdi
+|           0x00400a51    48c745f82021.  mov qword [rbp-memory], sym.memory
+|       ,=< 0x00400a59    e9ef010000     jmp 0x400c4d
+|       |   0x00400a5e    488b45e8       mov rax, qword [rbp-bytecode]
+|       |   0x00400a62    0fb600         movzx eax, byte [rax]
+|       |   0x00400a65    0fbec0         movsx eax, al
+|       |   0x00400a68    83e841         sub eax, 0x41
+|       |   0x00400a6b    83f817         cmp eax, 0x17
+|      ,==< 0x00400a6e    0f8790010000   ja 0x400c04
+|      ||   0x00400a74    89c0           mov eax, eax
+|      ||   0x00400a76    488b04c5c00e.  mov rax, qword [rax*8 + 0x400ec0]
+|      ||   0x00400a7e    ffe0           jmp rax
+|      ||   ;-- instr_A:
+|      ||   0x00400a80    8b055a162000   mov eax, dword [rip + 0x20165a]
+|      ||   0x00400a86    83c001         add eax, 1
+|      ||   0x00400a89    890551162000   mov dword [rip + 0x201651], eax
+|      ||   0x00400a8f    488b45e8       mov rax, qword [rbp-bytecode]
+|      ||   0x00400a93    488d5002       lea rdx, [rax + 2]
+|      ||   0x00400a97    488b45e8       mov rax, qword [rbp-bytecode]
+|      ||   0x00400a9b    4883c001       add rax, 1
+|      ||   0x00400a9f    4889d6         mov rsi, rdx
+|      ||   0x00400aa2    4889c7         mov rdi, rax
+|      ||   0x00400aa5    e863fdffff     call 0x40080d
+|      ||   0x00400aaa    c745f4030000.  mov dword [rbp - 0xc], 3
+|     ,===< 0x00400ab1    e95f010000     jmp 0x400c15
+|     |||   ;-- instr_S:
+|     |||   0x00400ab6    8b0528162000   mov eax, dword [rip + 0x201628]
+|     |||   0x00400abc    83c001         add eax, 1
+|     |||   0x00400abf    89051f162000   mov dword [rip + 0x20161f], eax
+|     |||   0x00400ac5    488b45e8       mov rax, qword [rbp-bytecode]
+|     |||   0x00400ac9    488d5002       lea rdx, [rax + 2]
+|     |||   0x00400acd    488b45e8       mov rax, qword [rbp-bytecode]
+|     |||   0x00400ad1    4883c001       add rax, 1
+|     |||   0x00400ad5    4889d6         mov rsi, rdx
+|     |||   0x00400ad8    4889c7         mov rdi, rax
+|     |||   0x00400adb    e8bffdffff     call 0x40089f
+|     |||   0x00400ae0    c745f4030000.  mov dword [rbp - 0xc], 3
+|    ,====< 0x00400ae7    e929010000     jmp 0x400c15
+|    ||||   ;-- instr_I:
+|    ||||   0x00400aec    8b05f6152000   mov eax, dword [rip + 0x2015f6]
+|    ||||   0x00400af2    83c001         add eax, 1
+|    ||||   0x00400af5    8905ed152000   mov dword [rip + 0x2015ed], eax
+|    ||||   0x00400afb    488b45e8       mov rax, qword [rbp-bytecode]
+|    ||||   0x00400aff    4883c001       add rax, 1
+|    ||||   0x00400b03    4889c7         mov rdi, rax
+|    ||||   0x00400b06    e856feffff     call 0x400961
+|    ||||   0x00400b0b    c745f4020000.  mov dword [rbp - 0xc], 2
+|   ,=====< 0x00400b12    e9fe000000     jmp 0x400c15
+|   |||||   ;-- instr_D:
+|   |||||   0x00400b17    8b05cf152000   mov eax, dword [rip + 0x2015cf]
+|   |||||   0x00400b1d    83c001         add eax, 1
+|   |||||   0x00400b20    8905c6152000   mov dword [rip + 0x2015c6], eax
+|   |||||   0x00400b26    488b45e8       mov rax, qword [rbp-bytecode]
+|   |||||   0x00400b2a    4883c001       add rax, 1
+|   |||||   0x00400b2e    4889c7         mov rdi, rax
+|   |||||   0x00400b31    e806feffff     call 0x40093c
+|   |||||   0x00400b36    c745f4020000.  mov dword [rbp - 0xc], 2
+|  ,======< 0x00400b3d    e9d3000000     jmp 0x400c15
+|  ||||||   ;-- instr_P:
+|  ||||||   0x00400b42    8b05a8152000   mov eax, dword [rip + 0x2015a8]
+|  ||||||   0x00400b48    83c001         add eax, 1
+|  ||||||   0x00400b4b    89059f152000   mov dword [rip + 0x20159f], eax
+|  ||||||   0x00400b51    488b45e8       mov rax, qword [rbp-bytecode]
+|  ||||||   0x00400b55    4883c001       add rax, 1
+|  ||||||   0x00400b59    4889c7         mov rdi, rax
+|  ||||||   0x00400b5c    e825feffff     call 0x400986
+|  ||||||   0x00400b61    c745f4020000.  mov dword [rbp - 0xc], 2
+| ,=======< 0x00400b68    e9a8000000     jmp 0x400c15
+| |||||||   ;-- B:
+| |||||||   ;-- instr_C:
+| |||||||   0x00400b6d    8b0581152000   mov eax, dword [rip + 0x201581]
+| |||||||   0x00400b73    83c001         add eax, 1
+| |||||||   0x00400b76    890578152000   mov dword [rip + 0x201578], eax
+| |||||||   0x00400b7c    488b45e8       mov rax, qword [rbp-bytecode]
+| |||||||   0x00400b80    4883c001       add rax, 1
+| |||||||   0x00400b84    0fb600         movzx eax, byte [rax]
+| |||||||   0x00400b87    0fbec0         movsx eax, al
+| |||||||   0x00400b8a    890530152000   mov dword [rip + 0x201530], eax
+| |||||||   0x00400b90    c745f4020000.  mov dword [rbp - 0xc], 2
+| ========< 0x00400b97    eb7c           jmp 0x400c15
+| |||||||   ;-- instr_X:
+| |||||||   0x00400b99    8b0559152000   mov eax, dword [rip + 0x201559]
+| |||||||   0x00400b9f    83c001         add eax, 1
+| |||||||   0x00400ba2    890550152000   mov dword [rip + 0x201550], eax
+| |||||||   0x00400ba8    488b45e8       mov rax, qword [rbp-bytecode]
+| |||||||   0x00400bac    4883c001       add rax, 1
+| |||||||   0x00400bb0    4889c7         mov rdi, rax
+| |||||||   0x00400bb3    e867feffff     call 0x400a1f
+| |||||||   0x00400bb8    c745f4020000.  mov dword [rbp - 0xc], 2
+| ========< 0x00400bbf    eb54           jmp 0x400c15
+| |||||||   ;-- instr_J:
+| |||||||   0x00400bc1    8b0535152000   mov eax, dword [rip + 0x201535]
+| |||||||   0x00400bc7    83c001         add eax, 1
+| |||||||   0x00400bca    89052c152000   mov dword [rip + 0x20152c], eax
+| |||||||   0x00400bd0    488b45e8       mov rax, qword [rbp-bytecode]
+| |||||||   0x00400bd4    4883c001       add rax, 1
+| |||||||   0x00400bd8    4889c7         mov rdi, rax
+| |||||||   0x00400bdb    e8d8fdffff     call 0x4009b8
+| |||||||   0x00400be0    8945f4         mov dword [rbp - 0xc], eax
+| ========< 0x00400be3    eb30           jmp 0x400c15
+| |||||||   ;-- instr_R:
+| |||||||   0x00400be5    8b0515152000   mov eax, dword [rip + 0x201515]
+| |||||||   0x00400beb    83c001         add eax, 1
+| |||||||   0x00400bee    89050c152000   mov dword [rip + 0x20150c], eax
+| |||||||   0x00400bf4    488b45e8       mov rax, qword [rbp-bytecode]
+| |||||||   0x00400bf8    4883c001       add rax, 1
+| |||||||   0x00400bfc    0fb600         movzx eax, byte [rax]
+| |||||||   0x00400bff    0fbec0         movsx eax, al
+| ========< 0x00400c02    eb5d           jmp 0x400c61
+| ||||||    ;-- not_instr:
+| |||||`--> 0x00400c04    bf980e4000     mov edi, str.Wrong_
+| ||||| |   0x00400c09    e862faffff     call sym.imp.puts
+| ||||| |   0x00400c0e    b800000000     mov eax, 0
+| ========< 0x00400c13    eb4c           jmp 0x400c61
+| `````---> 0x00400c15    8b45f4         mov eax, dword [rbp - 0xc]
+|       |   0x00400c18    4898           cdqe
+|       |   0x00400c1a    480145e8       add qword [rbp-bytecode], rax
+|       |   0x00400c1e    488b05631420.  mov rax, qword [rip + 0x201463]
+|       |   0x00400c25    483d20216000   cmp rax, sym.memory
+| ========< 0x00400c2b    720f           jb 0x400c3c
+|       |   0x00400c2d    488b05541420.  mov rax, qword [rip + 0x201454]
+|       |   0x00400c34    483d20236000   cmp rax, section_end..bss
+| ========< 0x00400c3a    7211           jb 0x400c4d
+| --------> 0x00400c3c    bf9f0e4000     mov edi, str.We_are_in_the_outer_space_
+|       |   0x00400c41    e82afaffff     call sym.imp.puts
+|       |   0x00400c46    b800000000     mov eax, 0
+| ========< 0x00400c4b    eb14           jmp 0x400c61
+| ------`-> 0x00400c4d    488b45e8       mov rax, qword [rbp-bytecode]
+|           0x00400c51    0fb600         movzx eax, byte [rax]
+|           0x00400c54    84c0           test al, al
+|           0x00400c56    0f8502feffff   jne 0x400a5e
+|           0x00400c5c    b801000000     mov eax, 1
+| --------> 0x00400c61    c9             leave
+\           0x00400c62    c3             ret

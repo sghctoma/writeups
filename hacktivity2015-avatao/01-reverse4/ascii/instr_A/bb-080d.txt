@@ -1,0 +1,34 @@
+[0x0040080d]> VV @ fcn.0040080d (nodes 9 edges 13 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+
+
+
+
+                         =---------------------------------------------=
+                         | [0x40080d]                                  |
+                         | (fcn) fcn.0040080d 146                      |
+                         | ; var int local_0      @ rbp-0x0            |
+                         | ; var int local_0_1    @ rbp-0x1            |
+                         | ; var int local_1      @ rbp-0x8            |
+                         | ; var int local_2      @ rbp-0x10           |
+                         | ; CALL XREF from 0x0040097f (fcn.0040080d)  |
+                         | fcn.instr_A:                                |
+                         | push rbp                                    |
+                         | mov rbp, rsp                                |
+                         | mov qword [rbp-local_1], rdi                |
+                         | mov qword [rbp-local_2], rsi                |
+                         | cmp qword [rbp-local_1], 0                  |
+                         | je 0x40089d ;[a]                            |
+                         =---------------------------------------------=
+                                 f t
+                 .---------------' '------------------------------------.
+                 |                                                      |
+                 |                                                      |
+         =----------------------------=                                 |
+         |  0x400820                  |                                 |
+         | cmp qword [rbp-local_2], 0 |                                 |
+         | je 0x40089d ;[a]           |                                 |
+         =----------------------------=                                 |
+                 f t                                                    |
+-----------------' '----------------------------------------------.     |
+                                                                  |     |

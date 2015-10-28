@@ -1,0 +1,10 @@
+[0x00400a45]> VV @ fcn.00400a45 (nodes 7 edges 7 zoom 100%) BB mouse:canvas-y movements-speed:5
+                                                              |                  |
+0x400a74:                                                     |                  |
+mov eax, eax                                               [_0a5e_]         [_0c5c_]
+mov rax, qword [rax*8 + 0x400ec0] ; [0x400ec0:8]=0x400a80       f t          v
+jmp rax                                                  .------' '--.       |
+                                                         |           |       |
+                                                         |           |       |
+                                                    <@@@@@@>      [_0c04_]   |
+                                                                   v         |

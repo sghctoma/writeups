@@ -1,0 +1,42 @@
+[0x004009b8]> VV @ fcn.004009b8 (nodes 10 edges 13 zoom 100%) BB mouse:canvas-y movements-speed
+
+0x4009b8:
+(fcn) fcn.004009b8 103
+; var int local_0      @ rbp-0x0
+; var int local_0_1    @ rbp-0x1              <@@@@@@>
+; var int arg1_and_0x3f @ rbp-0x4                  f t
+; var int arg1         @ rbp-0x18             .----'.'
+fcn.instr_J:                                  |     |
+push rbp                                      |     |
+mov rbp, rsp                             [_09e1_]   |
+mov qword [rbp-arg1], rdi                 v         |
+mov rax, qword [rbp-arg1]                 '.     .--'
+movzx eax, byte [rax]                      |     |
+movsx eax, al                              |     |
+and eax, 0x3f                             [_09e4_]
+mov dword [rbp-arg1_and_0x3f], eax           t f
+mov rax, qword [rbp-arg1]            .-------' '--------.
+movzx eax, byte [rax]                |                  |
+movsx eax, al                        |                  |
+and eax, 0x40                     [_0a1a_]         [_09ef_]
+test eax, eax                      v                  t f
+je 0x4009e4 ;[a]                   |           .------' '------.
+                                   |           |               |
+                                   |           |               |
+                                   |        [_0a13_]      [_09f9_]
+                                   |         v               t f
+                                   |     .---'         .-------'
+                                   |     |             |     |
+                                   |     |             |     |
+                                   |     |        [_09ff_]   |
+                                   |     |         v         |
+                                   |     |         '----. .--'
+                                   |     |              | |
+                                   |     |              | |
+                                   |     |             [_0a0e_]
+                                   |     |              v
+                                   '-----'--.-----------'
+                                            |
+                                            |
+                                           [_0a1d_]
+

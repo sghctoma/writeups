@@ -1,0 +1,12 @@
+[0x004009b8]> VV @ fcn.004009b8 (nodes 10 edges 13 zoom 100%) BB mouse:canvas-y movements-speed
+                                       |           |               |
+0x4009ff:                              |           |               |
+mov eax, dword [rip + 0x2016ff] ; [0x602104:4]=0x762e756e  LEA sym.good_if_ne_zero ; "nu.versio
+add eax, 1                             |         v               t f
+mov dword [rip + 0x2016f6], eax ; [0x602104:4]=0x762e756e  LEA sym.good_if_ne_zero ; "nu.versio
+                                       |     |             |     |
+                                       |     |             |     |
+                                       |     |        <@@@@@@>   |
+                                       |     |         v         |
+                                       |     |         '----. .--'
+                                       |     |              | |

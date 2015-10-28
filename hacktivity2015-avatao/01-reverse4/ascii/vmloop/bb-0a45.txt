@@ -1,0 +1,25 @@
+[0x00400a45]> VV @ fcn.vmloop (nodes 7 edges 7 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+0x400a45:
+(fcn) fcn.vmloop 542                                <@@@@@@>
+; arg int arg_787492   @ rbp+0x602120                v
+; var int local_0_1    @ rbp-0x1                     |
+; var int local_3      @ rbp-0x18                    |
+; CALL XREF from 0x00400d0f (fcn.vmloop)             |
+push rbp                                            [_0c4d_]
+mov rbp, rsp                                           t f
+sub rsp, 0x20                                  .-------' '--------.
+mov qword [rbp-local_3], rdi                   |                  |
+mov qword [rbp - 8], sym.memory ; [0x602120:8]=0x6e79642e616c65  LEA sym.memory ; "ela.dyn" @ 0x6
+jmp 0x400c4d ;[a]                           [_0a5e_]         [_0c5c_]
+                                                 f t          v
+                                          .------' '--.       |
+                                          |           |       |
+                                          |           |       |
+                                     [_0a74_]      [_0c04_]   |
+                                                    v         |
+                                                    '----.----'
+                                                         |
+                                                         |
+                                                        [_0c61_]
+

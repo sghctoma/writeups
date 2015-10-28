@@ -1,0 +1,17 @@
+0x40093c:
+(fcn) fcn.0040093c 37
+; var int local_0_1    @ rbp-0x1
+; var int local_3      @ rbp-0x18
+;-- fcn.instr_D:
+0x0040093c  55             push rbp
+0x0040093d  4889e5         mov rbp, rsp        <@@@@@@>
+0x00400940  4883ec18       sub rsp, 0x18
+0x00400944  48897de8       mov qword [rbp-local_3], rdi
+0x00400948  c645ff01       mov byte [rbp-local_0_1], 1
+0x0040094c  488d55ff       lea rdx, [rbp-local_0_1]
+0x00400950  488b45e8       mov rax, qword [rbp-local_3]
+0x00400954  4889d6         mov rsi, rdx
+0x00400957  4889c7         mov rdi, rax
+0x0040095a  e840ffffff     call fcn.0040089f ;[a]
+0x0040095f  c9             leave
+0x00400960  c3             ret

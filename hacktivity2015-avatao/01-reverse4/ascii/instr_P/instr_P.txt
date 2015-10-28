@@ -1,0 +1,25 @@
+[0x00400986]> VV @ fcn.00400986 (nodes 1 edges 0 zoom 100%) BB mouse:canvas-y movements-speed:5
+
+0x400986:
+(fcn) fcn.00400986 50
+; arg int arg_9_5      @ rbp+0x4d
+; arg int arg_10       @ rbp+0x50
+; var int local_0_1    @ rbp-0x1
+; var int local_0_2    @ rbp-0x2
+; var int local_3      @ rbp-0x18             <@@@@@@>
+fcn.instr_P:
+push rbp
+mov rbp, rsp
+sub rsp, 0x18
+mov qword [rbp-local_3], rdi
+mov byte [rbp-local_0_1], 0x4d ; [0x4d:1]=0 ; 'M'
+mov byte [rbp-local_0_2], 0x50 ; [0x50:1]=64 ; 'P'
+mov rax, qword [rip + 0x2016e7] ; [0x602088:8]=0x602120 sym.memory LEA sym.current_memory_ptr ;
+mov rdx, qword [rbp-local_3]
+movzx edx, byte [rdx]
+mov byte [rax], dl
+lea rax, [rbp-local_0_2]
+mov rdi, rax
+call fcn.00400961 ;[a]
+leave
+ret
