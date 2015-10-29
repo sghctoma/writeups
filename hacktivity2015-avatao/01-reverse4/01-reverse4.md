@@ -214,13 +214,12 @@ We can list all the strings r2 found:
 OK, the strings looks interesting, especially the one at 0x00400f92. It seems to
 hint that this crackme is based on a virtual machine. Keep that in mind!
 
-These stringst could be a good starting point if we were talking about a
+These strings could be a good starting point if we were talking about a
 real-life application with many-many features. But we are talking about a
 crackme, and they tend to be small and simple, and focused around the problem to
 be solved. So I usually just take a look at the entry point(s) and see if I can
 figure out something from there. Nevertheless, I'll show you how to find where
 these strings are used:
-
 
 ```
 [0x00400720]> axt @@=`f~[0]`
@@ -838,7 +837,7 @@ vars:
 ```
 
 And we have arrived to the predicted switch-case statement, and we can see that
-*arg1*'s value is checked agains "M", "P", and "C".
+*arg1*'s value is checked against "M", "P", and "C".
 
 ![instr_A switch values](img/instr_A/switch-values.png)
 
@@ -973,7 +972,7 @@ This function XORs the value at *sym.current_memory_ptr* with *arg1*.
 ###instr_J
 
 This one is not as simple as the previous ones, but it's not that complicated
-either. Since I'm obviously obsessed by variable renaming:
+either. Since I'm obviously obsessed with variable renaming:
 
 ```
 :> afvn local_3 arg1
@@ -1020,8 +1019,8 @@ After all this, the function returns with *arg1_and_0x3f*:
 We've now reversed all the VM instructions, and have a full understanding about
 how it works. Here is the VM's instruction set:
 
-| Instruction | 1st arg | 2nd arg | What it does?
-| ----------- | ------- | ------- | -------------
+| Instruction | 1st arg | 2nd arg | What does it do?
+| ----------- | ------- | ------- | ----------------
 | "A"         | "M"     | arg2    | \*sym.current_memory_ptr += arg2
 |             | "P"     | arg2    | sym.current_memory_ptr += arg2
 |             | "C"     | arg2    | sym.written_by_instr_C += arg2
@@ -1045,22 +1044,23 @@ the VM with the instruction set described in the previous paragraph. Here is
 the program's functional specification:
 
 - the program must return "*"
-- *sym.memory* has to contain the string "Such VM! MuCH reV3rse!"
+- *sym.memory* has to contain the string "Such VM! MuCH reV3rse!" after
+  execution
 - all 9 instructions have to be used at least once
 - *sym.good_if_ne_zero* should not be zero
 - instr_P is not allowed to be used more than 9 times
 
-Since this document is about reversing and not about programming, I'll leave the
-programming part to the fellow reader :) But I'm not going to leave you
-empty-handed, I'll give you one advice: Except for "J", all of the instructions
-are simple, easy to use, and it should not be a problem to construct the 
-"Such VM! MuCH reV3rse!" using them. "J" however is a bit complicated compared
-to the others. One should realize that its sole purpose is to make
-*sym.good_if_ne_zero* bigger than zero, which is a requirement to access the
-flag. In order to increment *sym.good_if_ne_zero*, two conditions should be met:
+Since this document is about reversing, I'll leave the programming part to the
+fellow reader :) But I'm not going to leave you empty-handed, I'll give you one
+advice: Except for "J", all of the instructions are simple, easy to use, and it
+should not be a problem to construct the "Such VM! MuCH reV3rse!" using them.
+"J" however is a bit complicated compared to the others. One should realize that
+its sole purpose is to make *sym.good_if_ne_zero* bigger than zero, which is a
+requirement to access the flag. In order to increment *sym.good_if_ne_zero*,
+three conditions should be met:
 
 - *arg1* should be a negative number, otherwise we would return early
-- *sym.written_by_instr_C* should not be 0, when "J" is called. This means that
+- *sym.written_by_instr_C* should not be 0 when "J" is called. This means that
   "C", "AC", or "SC" instructions should be used before calling "J".
 - *arg1_and_0x3f* should be negative when checked. Since 0x3f's sign bit is
   zero, no matter what *arg1* is, the result of *arg1* & 0x3f will always be
