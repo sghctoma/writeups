@@ -30,7 +30,8 @@ webhack :) ) one of them. There were 3 different games at the conf, and I've
 chosen the one that was provided by [avatao](https://avatao.com). It consisted
 of 8 challenges, most of them being basic web hacking stuff, one sandbox escape,
 one simple buffer overflow exploitation, and there were two reverse engineering
-exercises too.  You can find these challenges on https://platform.avatao.com.
+exercises too both written by AKG (@acskurucz)  You can find these challenges on
+https://platform.avatao.com.
 
 .radare2
 --------
@@ -1084,7 +1085,8 @@ all possible instructions. This means that the code is ugly and unefficient.
 .outro
 ------
 
-Well, what can I say? Such VM, much reverse! :)
+Well, what can I say? Such VM, much reverse! :) Thx much for the nice challenge,
+@acskurucz!
 
 What started out as a simple writeup for a simple crackme, became a rather
 lengthy writeup/r2 tutorial, so kudos if you've read through it. I hope you
