@@ -1,0 +1,266 @@
+digraph {
+	graph [splines=ortho]
+	node [fillcolor=lightgray fontname=Courier fontsize=10 shape=box style=filled]
+		"0x40278e" [label="Prison Collapsed."]
+		"0x4027af" [label=nop]
+		"0x402923" [label="if (0x400960(local_5, local_7) == 0) green"]
+		"0x40252d" [label="if (local_4 == 1) green"]
+		"0x402611" [label="if (local_0_4 < 2) green"]
+		"0x4025d2" [label="local_4++"]
+		"0x402c03" [label="if (0x400960(local_6, local_5) != 0) green"]
+		"0x402851" [label="if (local_5[0] != 0) green"]
+		"0x402a05" [label="Path Blocked!!"]
+		"0x4027c5" [label="if (local_4[0] < local_5[1]) green"]
+		"0x402b26" [label="if (local_50_1 == \"s\") green"]
+		"0x402b75" [label="Path Blocked!!"]
+		"0x402961" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x403004" [label="if (local_44 != \"6a9e23f57e9f5590b0c168a781bf07c7\") green"]
+		"0x402d73" [label="if (local_5[0] != local_5[1]) green"]
+		"0x403328" [label="if (local_4 < 40) green"]
+		"0x402e6b" [label="MD5_Final(local_34, local_19)
+SHA1_Final(local_38, local_31)
+local_4 = 0"]
+		"0x402873" [label="Prison Collapsed."]
+		"0x402cbb" [label="if(0x400960(local_6, local_7) != 0) green"]
+		"0x402dbd" [label="if(local_6[0] != 0) green"]
+		"0x402f44" [label="local_4 = 0"]
+		"0x4024e2" [label="if (local_4 != 0) green"]
+		"0x402abd" [label="Path Blocked!!"]
+		"0x402597" [label="local_7 = calloc(1, 56)"]
+		"0x4030dd" [label="local_4++"]
+		"0x403347" [label="local_50[local_4] = local_50[local_4] ^ 0x604210[local_4]"]
+		"0x40246d" [label="if (local_3_4 > 3) green"]
+		"0x40312e" [label="if (local_3_4 == 2) green"]
+		"0x402632" [label="if (local_0_4 < 3) green"]
+		"0x402501" [label="local_5 = calloc(1, 56)"]
+		"0x403077" [label="if(local_40 < 40) green"]
+		"0x402f1a" [label="local_4++"]
+		"0x4031df" [label="local_50[local_4] = local_50[local_4] ^ 0x6040b0[local_4]"]
+		"0x402a93" [label="if(0x400960(local_7, local_6) != 0) green"]
+		"0x402d4e" [label="if (local_50_1 == \"e\") green"]
+		"0x4025c3" [label=nop]
+		"0x402df3" [label=nop]
+		"0x402bde" [label="if (local_50_1 == \"z\") green"]
+		"0x402fc1" [label="local_4++"]
+		"0x402e20" [label=nop]
+		"0x402e2f" [label=nop]
+		"0x402a6e" [label="if (local_50_1 == \"w\") green"]
+		"0x40248c" [label="Cell does not exist."]
+		"0x403096" [label="local_50[local_4] = local_50[local_4] ^ 0x604160[local_4]"]
+		"0x402c96" [label="if (local_50_1 == \"q\") green"]
+		"0x402fe5" [label="if (local_3_4 == 1) green"]
+		"0x4032b5" [label="if(local_44 != \"05aeebcadfe7f05a7e778d904d6d297e\") green"]
+		"0x4024ad" [label="local_4 = 0"]
+		"0x402a19" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x402cf9" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x402e02" [label=nop]
+		"0x403061" [label="local_4 = 0"]
+		"0x40277f" [label=nop]
+		"0x4033fe" [label=ret]
+		"0x4029b6" [label="if (local_50_1 == \"d\") green"]
+		"0x402e3e" [label=nop]
+		"0x40304d" [label="Path Blocked!!"]
+		"0x402b89" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x402653" [label="if (local_0_4 == 3) green"]
+		"0x4024c3" [label="if (local_0_4 < 3) green"]
+		"0x4031c0" [label="if (local_4) < 40) green"]
+		"0x402c2d" [label="Path Blocked!!"]
+		"0x402830" [label="local_4++"]
+		"0x402e11" [label=nop]
+		"0x402e5c" [label=nop]
+		"0x403101" [label="flag: local_50"]
+		"0x403312" [label="local_4 = 0"]
+		"0x40254c" [label="local_6 = calloc(1, 56)"]
+		"0x40294d" [label="Path Blocked!!"]
+		"0x402894" [label="path input
+MD5_Init(local_19)
+SHA1_Init(local_31)"]
+		"0x402ad1" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x402eb3" [label="if (local_4 < 16) green"]
+		"0x402d98" [label="if (local_7[0] != local_7[1]) green"]
+		"0x403196" [label="Path Blocked!!"]
+		"0x4027e7" [label="local_5[local_5[0] + 1] = local_5[0]
+local_5[0]--"]
+		"0x4025fc" [label="local_0_4 = local_3_4"]
+		"0x402c41" [label="MD5_Update(local_19, local_50_1, 1)
+SHA1_Update(local_31, local_50_1, 1)"]
+		"0x4033d1" [label="flag: local_50"]
+		"0x4031aa" [label="local_4 = 0"]
+		"0x4032fe" [label="Path Blocked!!"]
+		"0x4028de" [label="scanf(local_50_1)
+if(local_50_1 == \"a\") green"]
+		"0x402695" [label="local_5[0] = 12
+local_5[1] = 12
+local_6[0] = 12
+local_6[1] = 12
+local_7[0] = 12
+local_7[1] = 12"]
+		"0x402731" [label="local_5[0] = 11
+local_5[1] = 11
+local_6[0] = 11
+local_6[1] = 11
+local_7[0] = 11
+local_7[1] = 11"]
+		"0x402674" [label="if (local_0_4 == 1) green"]
+		"0x403296" [label="if (local_3_4 == 3) green"]
+		"0x402f79" [label="sprintf(local_50[2 * local_4], \"%02x\", local_38[local_4]"]
+		"0x402f5a" [label="if (local_4 < 20) green"]
+		"0x402ed2" [label="sprintf(local_44[2 * local_4], \"%02x\", local_34[local_4]"]
+		"0x4033ad" [label="local_4++"]
+		"0x403269" [label="flag: local_50"]
+		"0x402578" [label="if (local_4 == 2) green"]
+		"0x403245" [label="local_4++"]
+		"0x402e4d" [label=nop]
+		"0x4029db" [label="iif (0x400960(local_5, local_6) != 0) green"]
+		"0x4026e3" [label="local_5[0] = 10
+local_5[1] = 10
+local_6[0] = 10
+local_6[1] = 10
+local_7[0] = 10
+local_7[1] = 10"]
+		"0x40244c" [label="if (local_1 < 1) green"]
+		"0x40314d" [label="if (local_44 != \"6dff819e14ce1bfc112d1817e69cff1f\") green"]
+		"0x402ddf" [label="Path Blocked!!"]
+		"0x402b4b" [label="if (0x400960(local_7, local_5) != 0) green"]
+		"0x402ce5" [label="Path Blocked!!"]
+			"0x40252d" -> "0x402578" [color=red]
+			"0x40252d" -> "0x40254c" [color=green]
+			"0x402fc1" -> "0x402f5a"
+			"0x403328" -> "0x4033d1" [color=red]
+			"0x403328" -> "0x403347" [color=green]
+			"0x402578" -> "0x4025c3" [color=red]
+			"0x402578" -> "0x402597" [color=green]
+			"0x40312e" -> "0x403296" [color=red]
+			"0x40312e" -> "0x40314d" [color=green]
+			"0x402a93" -> "0x402ad1" [color=red]
+			"0x402a93" -> "0x402abd" [color=green]
+			"0x402fe5" -> "0x40312e" [color=red]
+			"0x402fe5" -> "0x403004" [color=green]
+			"0x403245" -> "0x4031c0"
+			"0x4024c3" -> "0x4025fc" [color=red]
+			"0x4024c3" -> "0x4024e2" [color=green]
+			"0x402e02" -> "0x402e11"
+			"0x402923" -> "0x402961" [color=red]
+			"0x402923" -> "0x40294d" [color=green]
+			"0x403004" -> "0x403061" [color=red]
+			"0x403004" -> "0x40304d" [color=green]
+			"0x40314d" -> "0x4031aa" [color=red]
+			"0x40314d" -> "0x403196" [color=green]
+			"0x402f5a" -> "0x402fe5" [color=red]
+			"0x402f5a" -> "0x402f79" [color=green]
+			"0x402abd" -> "0x402ad1"
+			"0x4030dd" -> "0x403077"
+			"0x402b89" -> "0x402e2f"
+			"0x402b26" -> "0x402bde" [color=red]
+			"0x402b26" -> "0x402b4b" [color=green]
+			"0x402e4d" -> "0x402e5c"
+			"0x402632" -> "0x402653" [color=red]
+			"0x402632" -> "0x4026e3" [color=green]
+			"0x402e3e" -> "0x402e4d"
+			"0x40244c" -> "0x40246d" [color=red]
+			"0x40244c" -> "0x40248c" [color=green]
+			"0x402894" -> "0x4028de"
+			"0x402cbb" -> "0x402cf9" [color=red]
+			"0x402cbb" -> "0x402ce5" [color=green]
+			"0x402df3" -> "0x402e6b"
+			"0x4027af" -> "0x4027c5"
+			"0x40277f" -> "0x40278e"
+			"0x402830" -> "0x4027c5"
+			"0x403096" -> "0x4030dd"
+			"0x402b75" -> "0x402b89"
+			"0x4027e7" -> "0x402830"
+			"0x4033d1" -> "0x4033fe"
+			"0x402cf9" -> "0x402e11"
+			"0x402a05" -> "0x402a19"
+			"0x4029b6" -> "0x402a6e" [color=red]
+			"0x4029b6" -> "0x4029db" [color=green]
+			"0x402961" -> "0x402e5c"
+			"0x403077" -> "0x403101" [color=red]
+			"0x403077" -> "0x403096" [color=green]
+			"0x402f44" -> "0x402f5a"
+			"0x402653" -> "0x40277f" [color=red]
+			"0x402653" -> "0x402731" [color=green]
+			"0x402597" -> "0x4025c3"
+			"0x403196" -> "0x4031aa"
+			"0x402dbd" -> "0x402df3" [color=red]
+			"0x402dbd" -> "0x402ddf" [color=green]
+			"0x40294d" -> "0x402961"
+			"0x402c2d" -> "0x402c41"
+			"0x402d98" -> "0x402dbd" [color=red]
+			"0x402d98" -> "0x402ddf" [color=green]
+			"0x4031c0" -> "0x403269" [color=red]
+			"0x4031c0" -> "0x4031df" [color=green]
+			"0x402e5c" -> "0x4028de"
+			"0x402674" -> "0x40277f" [color=red]
+			"0x402674" -> "0x402695" [color=green]
+			"0x4032fe" -> "0x403312"
+			"0x402c03" -> "0x402c41" [color=red]
+			"0x402c03" -> "0x402c2d" [color=green]
+			"0x4031aa" -> "0x4031c0"
+			"0x402e2f" -> "0x402e3e"
+			"0x4031df" -> "0x403245"
+			"0x402d73" -> "0x402d98" [color=red]
+			"0x402d73" -> "0x402ddf" [color=green]
+			"0x402f1a" -> "0x402eb3"
+			"0x402e20" -> "0x402e2f"
+			"0x402f79" -> "0x402fc1"
+			"0x403312" -> "0x403328"
+			"0x402611" -> "0x402632" [color=red]
+			"0x402611" -> "0x402674" [color=green]
+			"0x40246d" -> "0x4024ad" [color=red]
+			"0x40246d" -> "0x40248c" [color=green]
+			"0x403101" -> "0x40312e"
+			"0x4024ad" -> "0x4024c3"
+			"0x403296" -> "0x4033fe" [color=red]
+			"0x403296" -> "0x4032b5" [color=green]
+			"0x402731" -> "0x4027af"
+			"0x4032b5" -> "0x403312" [color=red]
+			"0x4032b5" -> "0x4032fe" [color=green]
+			"0x403347" -> "0x4033ad"
+			"0x402eb3" -> "0x402f44" [color=red]
+			"0x402eb3" -> "0x402ed2" [color=green]
+			"0x402ce5" -> "0x402cf9"
+			"0x402501" -> "0x40252d"
+			"0x40304d" -> "0x403061"
+			"0x402851" -> "0x402894" [color=red]
+			"0x402851" -> "0x402873" [color=green]
+			"0x402e6b" -> "0x402eb3"
+			"0x402ed2" -> "0x402f1a"
+			"0x4025d2" -> "0x4024c3"
+			"0x402c96" -> "0x402d4e" [color=red]
+			"0x402c96" -> "0x402cbb" [color=green]
+			"0x4024e2" -> "0x40252d" [color=red]
+			"0x4024e2" -> "0x402501" [color=green]
+			"0x4025fc" -> "0x402611"
+			"0x402a6e" -> "0x402b26" [color=red]
+			"0x402a6e" -> "0x402a93" [color=green]
+			"0x40254c" -> "0x402578"
+			"0x402d4e" -> "0x402e02" [color=red]
+			"0x402d4e" -> "0x402d73" [color=green]
+			"0x4033ad" -> "0x403328"
+			"0x402ad1" -> "0x402e3e"
+			"0x403269" -> "0x403296"
+			"0x4027c5" -> "0x402851" [color=red]
+			"0x4027c5" -> "0x4027e7" [color=green]
+			"0x402695" -> "0x4027af"
+			"0x402bde" -> "0x402c96" [color=red]
+			"0x402bde" -> "0x402c03" [color=green]
+			"0x4026e3" -> "0x4027af"
+			"0x402e11" -> "0x402e20"
+			"0x402a19" -> "0x402e4d"
+			"0x4029db" -> "0x402a19" [color=red]
+			"0x4029db" -> "0x402a05" [color=green]
+			"0x4028de" -> "0x4029b6" [color=red]
+			"0x4028de" -> "0x402923" [color=green]
+			"0x4025c3" -> "0x4025d2"
+			"0x403061" -> "0x403077"
+			"0x402b4b" -> "0x402b89" [color=red]
+			"0x402b4b" -> "0x402b75" [color=green]
+			"0x402ddf" -> "0x402df3"
+			"0x402c41" -> "0x402e20"
+}
