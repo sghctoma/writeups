@@ -123,7 +123,7 @@ local_6[0] = 10
 local_6[1] = 10
 local_7[0] = 10
 local_7[1] = 10"]
-		"0x40244c" [label="if (local_1 < 1) green"]
+		"0x40244c" [label="if (local_1 < 1) green" peripheries=2]
 		"0x40314d" [label="if (local_44 != \"6dff819e14ce1bfc112d1817e69cff1f\") green"]
 		"0x402ddf" [label="Path Blocked!!"]
 		"0x402b4b" [label="if (0x400960(local_7, local_5) != 0) green"]
